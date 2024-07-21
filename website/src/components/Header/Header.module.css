@@ -1,7 +1,5 @@
 .container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     height: 100dvh;
@@ -9,11 +7,10 @@
 }
 
 .bio, .about {
-    flex-grow: 1;
     background-color: aqua;
     border-width: 2px;
-     border-color: red;
+    border-color: red;
     border-style: dashed;
-    min-width: 100px;
-    max-width: 600px;
+    flex: 1 1 50%;
+    min-width: 250px;
 }

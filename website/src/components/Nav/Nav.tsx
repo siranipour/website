@@ -2,11 +2,11 @@ import style from "./Nav.module.css";
 
 const Nav = () => {
   const items = [
-    "education",
-    "experience",
-    "timeline",
-    "publications",
-    "contacts",
+    "Education",
+    "Experience",
+    "Timeline",
+    "Publications",
+    "Contacts",
   ];
   return (
     <div className={style.navMenu}>

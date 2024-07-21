@@ -1,14 +1,15 @@
 import Header from "./components/Header/Header";
-import Education from "./components/Education/Education";
+import Section from "./components/Section/Section";
 import "./App.css";
 
-function App() {
+const App = () => {
   return (
     <>
       <Header />
-      <Education />
+      <Section title="Education" />
+      {/* <Section title="Blah" /> */}
     </>
   );
-}
+};
 
 export default App;
