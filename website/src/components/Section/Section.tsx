@@ -4,7 +4,7 @@ import { SectionTitle, Title } from "../Title/Title";
 const Section = ({ title }: SectionTitle) => {
   return (
     <>
-      <div className={style.sectionContainer}>
+      <section className={style.sectionContainer}>
         <Title title={title} />
         <ul>
           <li>
@@ -15,7 +15,7 @@ const Section = ({ title }: SectionTitle) => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Reprehenderit, non?
         </ul>
-      </div>
+      </section>
     </>
   );
 };
