@@ -50,7 +50,7 @@ on:
 
 env:
   PROJECT_ID: t-pointer-430919-v3
-  SERVICE: portfolio-website
+  SERVICE: website-react-app
   REGION: europe-west2
 
 jobs:
