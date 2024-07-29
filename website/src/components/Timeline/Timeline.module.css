@@ -1,0 +1,68 @@
+:root{
+    --tick-width: 25px;
+    --tick-height: 5px;
+}
+
+.timeline{
+    padding-top: 30px;
+}
+
+.timeline-entry {
+    display: flex;
+    align-items: center;
+}
+
+.timeline-entry > * {
+    flex: 1 1 50%;
+    padding: calc(var(--tick-width) + 5px);
+    padding-top: 0;
+    box-sizing: content-box;
+}
+
+.timeline-entry:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-entry:nth-child(odd) > div:last-child {
+    border-left-width: var(--tick-height);
+    border-left-style: solid;
+}
+
+.timeline-entry:nth-child(even) > div:last-child {
+    border-right-width: var(--tick-height);
+    border-right-style: solid;
+}
+
+.description {
+    position: relative;
+}
+
+.timeline-entry:nth-child(even) > .description::after, .description::before {
+    content: '';
+    color: black;
+    background-color: black;
+    width: var(--tick-width);
+    height: var(--tick-height);
+    position: absolute;
+    right: 0;
+    bottom: 50%;
+}
+
+.timeline-entry:nth-child(odd) > .description::before {
+    left: 0;
+}
+
+@media (max-width: 650px) {
+    .timeline-entry {
+        display: block;
+    }
+    .description::after, .description::before{
+        visibility: hidden;
+    }
+    .timeline-entry:nth-child(odd) > div:last-child {
+        border-left-width: 0;
+    }
+    .timeline-entry:nth-child(even) > div:last-child {
+        border-right-width: 0;
+    }
+}

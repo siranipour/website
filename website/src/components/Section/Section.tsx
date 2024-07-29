@@ -6,15 +6,6 @@ const Section = ({ title }: SectionTitle) => {
     <>
       <section className={style.sectionContainer}>
         <Title title={title} />
-        <ul>
-          <li>
-            PhD - Department of Applied Mathematics and Theoretical Physics
-          </li>
-          <li>MMath - Masters of Mathematics</li>
-          <li>BA - Natural Sciences</li>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Reprehenderit, non?
-        </ul>
       </section>
     </>
   );
