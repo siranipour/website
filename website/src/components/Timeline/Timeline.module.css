@@ -5,18 +5,22 @@
 
 .timeline{
     padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .timeline-entry {
     display: flex;
-    align-items: center;
+    align-items: stretch;
 }
 
 .timeline-entry > * {
+    display: flex;
+    flex-direction: column;
     flex: 1 1 50%;
     padding: calc(var(--tick-width) + 5px);
-    padding-top: 0;
     box-sizing: content-box;
+    justify-content: center;
+    text-align: center;
 }
 
 .timeline-entry:nth-child(even) {
@@ -55,6 +59,10 @@
 @media (max-width: 650px) {
     .timeline-entry {
         display: block;
+    }
+    .description {
+        border-bottom-width: 3px;
+        border-bottom-style: solid;
     }
     .description::after, .description::before{
         visibility: hidden;

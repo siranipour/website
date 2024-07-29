@@ -2,7 +2,7 @@ import style from "./Nav.module.css";
 
 const Nav = () => {
   const items = [
-    "Education",
+    "Timeline",
     "Experience",
     "Timeline",
     "Publications",
