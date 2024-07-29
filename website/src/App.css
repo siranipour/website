@@ -1,9 +1,9 @@
+:root {
+    margin: 10%;
+    margin-top: 0;
+}
+
 *, *::after, *::before {
     margin: 0;
     box-sizing: border-box;
-}
-
-body > div{
-    padding-left: 5dvw;
-    padding-right: 5dvw;
 }
