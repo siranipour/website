@@ -3,6 +3,10 @@
     margin-top: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 *, *::after, *::before {
     margin: 0;
     box-sizing: border-box;
