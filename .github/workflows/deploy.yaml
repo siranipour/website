@@ -51,7 +51,7 @@ on:
 env:
   PROJECT_ID: t-pointer-430919-v3
   SERVICE: website-react-app
-  REGION: europe-west2
+  REGION: europe-west2-docker.pkg.dev
 
 jobs:
   deploy:
