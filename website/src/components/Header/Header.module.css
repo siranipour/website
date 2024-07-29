@@ -9,3 +9,7 @@
     flex: 1 1 50%;
     min-width: 250px;
 }
+
+.bio h2 {
+    padding-bottom: 50px;
+}
