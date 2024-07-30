@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -12,8 +12,7 @@
         "run": {
             "serviceId": "website-react-app",
             "region": "europe-west2"
-        },
-        "destination": "/index.html"
+        }
       }
     ]
   }
