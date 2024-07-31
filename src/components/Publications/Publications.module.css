@@ -39,10 +39,6 @@
     font-size: 0.9em;
 }
 
-.publication_table td a {
-    color: black;
-}
-
 @media (max-width: 650px) {
     .table_container {
         overflow-x: auto;
