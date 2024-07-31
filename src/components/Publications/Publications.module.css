@@ -27,6 +27,10 @@
     border-top: 1px solid #dddddd;
 }
 
+.publication_table td:last-of-type {
+    text-align: right;
+}
+
 .publication_date {
     font-weight: bold;
 }
