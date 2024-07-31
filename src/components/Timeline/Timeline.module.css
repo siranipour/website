@@ -23,16 +23,16 @@
     text-align: center;
 }
 
-.timeline-entry:nth-child(even) {
+.timeline-entry:nth-child(odd) {
     flex-direction: row-reverse;
 }
 
-.timeline-entry:nth-child(odd) > div:last-child {
+.timeline-entry:nth-child(even) > div:last-child {
     border-left-width: var(--tick-height);
     border-left-style: solid;
 }
 
-.timeline-entry:nth-child(even) > div:last-child {
+.timeline-entry:nth-child(odd) > div:last-child {
     border-right-width: var(--tick-height);
     border-right-style: solid;
 }
@@ -41,7 +41,7 @@
     position: relative;
 }
 
-.timeline-entry:nth-child(even) > .description::after, .description::before {
+.timeline-entry:nth-child(odd) > .description::after, .description::before {
     content: '';
     color: black;
     background-color: black;
@@ -52,7 +52,7 @@
     bottom: 50%;
 }
 
-.timeline-entry:nth-child(odd) > .description::before {
+.timeline-entry:nth-child(even) > .description::before {
     left: 0;
 }
 
@@ -67,10 +67,10 @@
     .description::after, .description::before{
         visibility: hidden;
     }
-    .timeline-entry:nth-child(odd) > div:last-child {
+    .timeline-entry:nth-child(even) > div:last-child {
         border-left-width: 0;
     }
-    .timeline-entry:nth-child(even) > div:last-child {
+    .timeline-entry:nth-child(odd) > div:last-child {
         border-right-width: 0;
     }
 }
