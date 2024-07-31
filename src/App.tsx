@@ -13,7 +13,7 @@ const App = () => {
       <Header />
       <Timeline entries={timelineEntries} title={"Timeline"} />
       <Publications entries={publicationEntries} title={"Publications"} />
-      <Contact />
+      <Contact title={"Contact"} />
     </>
   );
 };
