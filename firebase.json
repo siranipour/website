@@ -11,7 +11,7 @@
         "source": "**",
         "run": {
             "serviceId": "website-react-app",
-            "region": "europe-west1"
+            "region": "europe-west2"
         }
       }
     ]
