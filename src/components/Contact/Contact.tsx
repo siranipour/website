@@ -1,4 +1,3 @@
-import style from "./Contact.module.css";
 import { Title } from "../Title/Title";
 
 interface contactProp {
