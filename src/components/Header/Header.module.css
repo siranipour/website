@@ -25,6 +25,36 @@
     min-width: 250px;
 }
 
+.appear {
+    opacity: 0;
+    animation: 1.5s fade-in ease-in 1s;
+    animation-fill-mode: forwards;
+}
+
+.typewriter {
+    border-right: 3px solid;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+        typing 1s steps(16),
+        cursor 0.8s ease-in-out infinite alternate;
+    animation-fill-mode: forwards;
+}
+
+
 .intro h2 {
     padding-bottom: 50px;
+}
+
+@keyframes cursor {
+    50% { border-color: transparent;}
+}
+
+@keyframes typing {
+    from { width: 0; }
+}
+
+@keyframes fade-in {
+    100% { opacity: 1; }
 }
