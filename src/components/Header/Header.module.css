@@ -2,14 +2,29 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    height: 100lvh;
+    height: 100dvh;
 }
 
-.bio, .about {
+@media (orientation: landscape) {
+    .container {
+        height: 100lvh
+    }
+}
+@media (orientation: portrait) {
+    .container {
+        height: 100svh;
+    }
+}
+
+.name {
+    display: inline-block;
+}
+
+.intro, .abstract {
     flex: 1 1 50%;
     min-width: 250px;
 }
 
-.bio h2 {
+.intro h2 {
     padding-bottom: 50px;
 }

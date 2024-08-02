@@ -5,9 +5,11 @@ const Header = () => {
   return (
     <>
       <div className={style.container}>
-        <div className={style.bio}>
+        <div className={style.intro}>
           <div>
-            <h1>Shayan Iranipour</h1>
+            <div className={style.name}>
+              <h1 className={style.typewriter}>Shayan Iranipour</h1>
+            </div>
             <h2>
               Quantitative Researcher, <br></br> Cambridge Theoretical Physics
               PhD
@@ -15,7 +17,7 @@ const Header = () => {
           </div>
           <Nav />
         </div>
-        <div className={style.about}>
+        <div className={style.abstract}>
           Nisi sit qui et esse. In quis culpa occaecat qui aute officia. Eiusmod
           ea nulla et reprehenderit do. Proident incididunt sint dolore do
           excepteur irure officia fugiat ex in occaecat Lorem non officia.
