@@ -8,9 +8,9 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+/* body {
     padding-bottom: 50px;
-}
+} */
 
 *, *::after, *::before {
     margin: 0;
