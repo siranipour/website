@@ -27,7 +27,7 @@
 
 .appear {
     opacity: 0;
-    animation: 1.5s fade-in ease-in 1s;
+    animation: 1s fade-in ease-in 0.4s;
     animation-fill-mode: forwards;
 }
 
