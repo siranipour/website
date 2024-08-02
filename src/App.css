@@ -1,15 +1,14 @@
-:root {
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 0;
-}
-
 html {
     scroll-behavior: smooth;
+    margin-top: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 100px;
 }
 
 body {
-    margin-bottom: 100px;
+    max-width: 2000px;
+    margin: auto;
 }
 
 *, *::after, *::before {
