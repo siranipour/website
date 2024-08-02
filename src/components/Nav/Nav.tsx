@@ -5,9 +5,11 @@ const Nav = () => {
   return (
     <div className={style.navMenu}>
       {items.map((ele) => (
-        <a key={ele} href={`#${ele}`}>
-          # {ele}
-        </a>
+        <span>
+          <a key={ele} href={`#${ele}`}>
+            # {ele}
+          </a>
+        </span>
       ))}
     </div>
   );

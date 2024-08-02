@@ -3,7 +3,7 @@ html {
     margin-top: 0;
     margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 100px;
+    padding-bottom: 100px;
 }
 
 body {
@@ -18,8 +18,19 @@ body {
 
 a {
     color: blue;
+    display: inline-block;
+    transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
 }
 
 a:visited {
     color: blue;
+}
+
+a:hover, a:visited:hover {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    color: red;
 }
