@@ -1,10 +1,10 @@
 import Header from "./components/Header/Header";
-// import Contact from "./components/Contact/Contact";
+import Contact from "./components/Contact/Contact";
 import { Timeline, timelineEntries } from "./components/Timeline/Timeline";
-// import {
-//   Publications,
-//   publicationEntries,
-// } from "./components/Publications/Publications";
+import {
+  Publications,
+  publicationEntries,
+} from "./components/Publications/Publications";
 import "./App.css";
 
 const App = () => {
@@ -12,8 +12,8 @@ const App = () => {
     <>
       <Header />
       <Timeline entries={timelineEntries} title={"Timeline"} />
-      {/* <Publications entries={publicationEntries} title={"Publications"} />
-      <Contact title={"Contact"} /> */}
+      <Publications entries={publicationEntries} title={"Publications"} />
+      <Contact title={"Contact"} />
     </>
   );
 };
