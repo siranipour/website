@@ -2,7 +2,7 @@
   "name": "website",
   "private": true,
   "version": "0.0.0",
-  "type": "script",
+  "type": "commonjs",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
