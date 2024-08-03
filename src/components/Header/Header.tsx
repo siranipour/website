@@ -25,7 +25,10 @@ const Header = () => {
           Cillum mollit Lorem reprehenderit elit commodo nulla elit magna
           ullamco excepteur pariatur esse laborum eiusmod. Sit non officia
           mollit id exercitation id. Labore dolor fugiat id commodo minim
-          exercitation.
+          exercitation.{" "}
+          <a href="/resume" target="_blank">
+            Download my CV.
+          </a>
         </p>
       </div>
     </div>
