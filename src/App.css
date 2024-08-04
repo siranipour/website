@@ -1,3 +1,8 @@
+*, *::after, *::before {
+    margin: 0;
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
     margin-top: 0;
@@ -9,11 +14,6 @@ html {
 body {
     max-width: 2000px;
     margin: auto;
-}
-
-*, *::after, *::before {
-    margin: 0;
-    box-sizing: border-box;
 }
 
 a {
