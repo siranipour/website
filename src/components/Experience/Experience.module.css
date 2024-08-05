@@ -1,0 +1,19 @@
+.experience_container {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.experience_container > h3, .experience_container > p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+
+@media (min-width: 650px) {
+    .experience_container {
+        grid-template-columns: 1fr 2fr;
+    }
+}

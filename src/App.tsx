@@ -1,5 +1,9 @@
 import Header from "./components/Header/Header";
 import Contact from "./components/Contact/Contact";
+import {
+  Experience,
+  ExperienceEntries,
+} from "./components/Experience/Experience";
 import { Timeline, timelineEntries } from "./components/Timeline/Timeline";
 import {
   Publications,
@@ -12,7 +16,8 @@ const App = () => {
     <>
       <Header />
       <Timeline entries={timelineEntries} title={"Timeline"} />
-      <Publications entries={publicationEntries} title={"Publications"} />
+      <Experience title={"Experience"} entries={ExperienceEntries} />
+      <Publications title={"Publications"} entries={publicationEntries} />
       <Contact title={"Contact"} />
     </>
   );

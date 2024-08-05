@@ -1,7 +1,7 @@
 import style from "./Nav.module.css";
 
 const Nav = () => {
-  const items = ["Timeline", "Publications", "Contact"];
+  const items = ["Timeline", "Experience", "Publications", "Contact"];
   return (
     <div className={style.navMenu}>
       {items.map((ele) => (
