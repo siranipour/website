@@ -10,6 +10,7 @@
     z-index: 1;
 }
 
-.container h2 {
+.container h3 {
     text-decoration: underline;
+    font-size: 2rem
 }

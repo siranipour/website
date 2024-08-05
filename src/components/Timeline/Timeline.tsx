@@ -55,8 +55,8 @@ const TimelineElement = ({
     <>
       <div className={style["timeline-entry"]}>
         <div>
-          <h2>{title}</h2>
-          <h3>{subtitle}</h3>
+          <h3>{title}</h3>
+          <h4>{subtitle}</h4>
           {startDate} to {endDate}
         </div>
         <div className={style.description}>{description}</div>
