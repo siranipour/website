@@ -1,4 +1,4 @@
-import Header from "./components/Header/Header";
+import Header from "./components/Banner/Banner";
 import Contact from "./components/Contact/Contact";
 import {
   Experience,

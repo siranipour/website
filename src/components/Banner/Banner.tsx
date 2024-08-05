@@ -1,4 +1,4 @@
-import style from "./Header.module.css";
+import style from "./Banner.module.css";
 import Nav from "../Nav/Nav";
 
 const Header = () => {
