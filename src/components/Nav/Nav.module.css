@@ -1,6 +1,7 @@
 .navMenu {
     display: flex;
     flex-direction: column;
+    font-size: 1.2rem;
 }
 
 .navMenu a, .navMenu a:visited {

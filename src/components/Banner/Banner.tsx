@@ -19,15 +19,13 @@ const Header = () => {
       </div>
       <div className={`${style.abstract} ${style.appear}`}>
         <p>
-          Nisi sit qui et esse. In quis culpa occaecat qui aute officia. Eiusmod
-          ea nulla et reprehenderit do. Proident incididunt sint dolore do
-          excepteur irure officia fugiat ex in occaecat Lorem non officia.
-          Cillum mollit Lorem reprehenderit elit commodo nulla elit magna
-          ullamco excepteur pariatur esse laborum eiusmod. Sit non officia
-          mollit id exercitation id. Labore dolor fugiat id commodo minim
-          exercitation.{" "}
+          Hi <span className={style.wave}>👋</span>, I'm Shayan, a quantitative
+          researcher building statistical models and trading systems for the
+          financial markets. Before that, I finished a PhD from Cambridge
+          working on concepts in theoretical physics and marrying ideas from
+          Quantum Field Theory and deep learning. Feel free to{" "}
           <a href="/resume" target="_blank">
-            Download my CV.
+            check out my CV.
           </a>
         </p>
       </div>

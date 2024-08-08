@@ -16,6 +16,10 @@ body {
     margin: auto;
 }
 
+h1 {
+    font-size: 2em;
+}
+
 a {
     color: blue;
     display: inline-block;
