@@ -92,7 +92,7 @@ const timelineEntries: TimelineEntry[] = [
         At Cambridge, I did my undergrad in{" "}
         <a href="https://www.undergraduate.study.cam.ac.uk/courses/natural-sciences-ba-hons-msci">
           natural sciences
-        </a>
+        </a>{" "}
         starting out with a broad span of scientific disciplines from physics to
         materials sciences and chemistry. Over the years I specialized
         exclusively in theoretical physics and mathematics, having picked up
