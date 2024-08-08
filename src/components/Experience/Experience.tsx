@@ -40,7 +40,7 @@ const ExperienceEntries: ExperienceEntry[] = [
     title: "Mathematics Undergraduate Supervisor",
     description: (
       <p>
-        During my PhD I did as much teaching as I could get away with. I taught
+        During my PhD I tried to do as much teaching as I could. I taught
         undergraduate mathematics courses in dynamics and relativity,
         differential equations, and classical dynamics. I also spent some time
         as an examiner for the STEP undergraduate admissions exam.

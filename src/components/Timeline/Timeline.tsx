@@ -19,16 +19,11 @@ const timelineEntries: TimelineEntry[] = [
       <p>
         After wrapping up my PhD I joined{" "}
         <a href="https://www.xantium.com/">Xantium</a> as a Quantitative
-        Researcher. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Vitae autem culpa iusto sapiente unde voluptas ullam ipsa blanditiis
-        iure hic quaerat, facere enim eveniet ex, doloremque dolores numquam at
-        deleniti reprehenderit asperiores fuga neque facilis? Facilis eveniet
-        necessitatibus rem aut quisquam voluptate porro dolorum itaque! Earum
-        officiis aspernatur laboriosam, fugiat itaque iusto sit rerum amet fuga
-        nihil saepe provident quidem dolores, corrupti nemo debitis asperiores
-        expedita, deserunt odio! Dolorem, excepturi vero quidem cumque magni,
-        deleniti sequi blanditiis tempore sit accusantium distinctio! Tempore
-        iusto sequi maiores asperiores blanditiis, officia tenetur illum?
+        Researcher. I build algorithmic trading strategies for the financial
+        markets and have accrued experience working on time series and
+        statistical modelling with large, noisy, low signal-to-noise ratio
+        datasets. I make extensive use of Python building robust, reliable, and
+        performant code.
       </p>
     ),
   },
@@ -39,14 +34,25 @@ const timelineEntries: TimelineEntry[] = [
     endDate: "2022-02-21",
     description: (
       <p>
-        During my masters year, I was fortunate enough to be selected from a
-        4-hour admissions exam for a PhD at{" "}
-        <a href="https://www.damtp.cam.ac.uk/">DAMTP</a> to research high-energy
-        particle physics theory with{" "}
-        <a href="https://www.damtp.cam.ac.uk/person/mu227">
+        I was fortunate enough to be selected, after a 4-hour admissions
+        examination, for a high-energy physics PhD at{" "}
+        <a href="https://www.damtp.cam.ac.uk/" target="_blank">
+          DAMTP
+        </a>{" "}
+        to research particle physics theory with{" "}
+        <a href="https://www.damtp.cam.ac.uk/person/mu227" target="_blank">
           Professor Maria Ubiali
         </a>
-        . If you're interested, feel free to take a look at{" "}
+        . My research focussed on blending deep learning, quantum
+        chromodynamics, and effective field theories to extract the inner
+        workings of the proton from particle collider experiments. During my PhD
+        I was a member of the{" "}
+        <a href="https://nnpdf.mi.infn.it" target="_blank">
+          NNPDF
+        </a>{" "}
+        collaboration, producing neural network parameterizations of the proton
+        which are actively being used by the research community. Feel free to
+        take a look at{" "}
         <a href="https://www.repository.cam.ac.uk/items/6d92ca76-9aac-4be5-aefc-99d49a27406f">
           my thesis
         </a>
@@ -71,8 +77,8 @@ const timelineEntries: TimelineEntry[] = [
         </a>{" "}
         of the Mathematical Tripos for my masters. I studied courses in
         fundamental physics such as Quantum Field Theory, String Theory, General
-        Relativity, or Supersymmetry. I graduated with a distinction from this
-        course.
+        Relativity, or Supersymmetry. I graduated from my masters with a
+        distinction.
       </p>
     ),
   },
@@ -87,9 +93,11 @@ const timelineEntries: TimelineEntry[] = [
         <a href="https://www.undergraduate.study.cam.ac.uk/courses/natural-sciences-ba-hons-msci">
           natural sciences
         </a>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro incidunt
-        praesentium maiores totam quam sapiente necessitatibus modi expedita
-        pariatur provident.
+        starting out with a broad span of scientific disciplines from physics to
+        materials sciences and chemistry. Over the years I specialized
+        exclusively in theoretical physics and mathematics, having picked up
+        some computational physics methods on the way. I graduated with a Double
+        First at the end of my BA.
       </p>
     ),
   },
