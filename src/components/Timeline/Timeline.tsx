@@ -17,11 +17,12 @@ const timelineEntries: TimelineEntry[] = [
     endDate: "Present",
     description: (
       <p>
-        <a href="https://www.xantium.com/">Xantium</a>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae autem
-        culpa iusto sapiente unde voluptas ullam ipsa blanditiis iure hic
-        quaerat, facere enim eveniet ex, doloremque dolores numquam at deleniti
-        reprehenderit asperiores fuga neque facilis? Facilis eveniet
+        After wrapping up my PhD I joined{" "}
+        <a href="https://www.xantium.com/">Xantium</a> as a Quantitative
+        Researcher. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Vitae autem culpa iusto sapiente unde voluptas ullam ipsa blanditiis
+        iure hic quaerat, facere enim eveniet ex, doloremque dolores numquam at
+        deleniti reprehenderit asperiores fuga neque facilis? Facilis eveniet
         necessitatibus rem aut quisquam voluptate porro dolorum itaque! Earum
         officiis aspernatur laboriosam, fugiat itaque iusto sit rerum amet fuga
         nihil saepe provident quidem dolores, corrupti nemo debitis asperiores
