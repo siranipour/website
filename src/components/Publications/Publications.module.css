@@ -35,12 +35,11 @@
     font-weight: bold;
 }
 
-.publication_title {
-    font-size: 0.9em;
-}
-
 @media (max-width: 650px) {
     .table_container {
         overflow-x: auto;
+    }
+    .publication_title {
+        font-size: 0.9em;
     }
 }
