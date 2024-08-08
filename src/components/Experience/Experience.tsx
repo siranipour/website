@@ -36,6 +36,17 @@ const ExperienceEntries: ExperienceEntry[] = [
       </p>
     ),
   },
+  {
+    title: "Mathematics Undergraduate Supervisor",
+    description: (
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed officia,
+        iste ullam eius quis, cupiditate et debitis mollitia laudantium earum
+        nihil tempore suscipit aperiam fugiat recusandae maiores odit. Id,
+        omnis!
+      </p>
+    ),
+  },
 ];
 
 const ExperienceElement = ({ title, description }: ExperienceEntry) => {

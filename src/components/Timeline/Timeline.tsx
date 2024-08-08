@@ -38,13 +38,14 @@ const timelineEntries: TimelineEntry[] = [
     endDate: "2022-02-21",
     description: (
       <p>
-        <a href="https://www.damtp.cam.ac.uk/">DAMTP</a>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur iure a
-        culpa unde obcaecati, minima rerum, quo ullam iste numquam consequatur
-        quis repellendus fuga repellat minus doloribus nisi magni sint ducimus
-        sequi aperiam neque nobis praesentium ut. Nostrum iusto optio
-        accusantium, beatae excepturi reiciendis tempora assumenda error
-        voluptas odio! Sequi. If you're interested, feel free to take a look at{" "}
+        During my masters year, I was fortunate enough to be selected from a
+        4-hour admissions exam for a PhD at{" "}
+        <a href="https://www.damtp.cam.ac.uk/">DAMTP</a> to research high-energy
+        particle physics theory with{" "}
+        <a href="https://www.damtp.cam.ac.uk/person/mu227">
+          Professor Maria Ubiali
+        </a>
+        . If you're interested, feel free to take a look at{" "}
         <a href="https://www.repository.cam.ac.uk/items/6d92ca76-9aac-4be5-aefc-99d49a27406f">
           my thesis
         </a>
@@ -59,12 +60,18 @@ const timelineEntries: TimelineEntry[] = [
     endDate: "2018-06-15",
     description: (
       <p>
-        <a href="https://en.wikipedia.org/wiki/Part_III_of_the_Mathematical_Tripos">
+        After specializing in theoretical physics during my undergrad, I decided
+        to continue with my studies by undertaking{" "}
+        <a
+          href="https://en.wikipedia.org/wiki/Part_III_of_the_Mathematical_Tripos"
+          target="_blank"
+        >
           part III
-        </a>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro incidunt
-        praesentium maiores totam quam sapiente necessitatibus modi expedita
-        pariatur provident.
+        </a>{" "}
+        of the Mathematical Tripos for my masters. I studied courses in
+        fundamental physics such as Quantum Field Theory, String Theory, General
+        Relativity, or Supersymmetry. I graduated with a distinction from this
+        course.
       </p>
     ),
   },
@@ -75,6 +82,7 @@ const timelineEntries: TimelineEntry[] = [
     endDate: "2017-06-16",
     description: (
       <p>
+        At Cambridge, I did my undergrad in{" "}
         <a href="https://www.undergraduate.study.cam.ac.uk/courses/natural-sciences-ba-hons-msci">
           natural sciences
         </a>
