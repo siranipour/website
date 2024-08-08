@@ -53,8 +53,10 @@ const timelineEntries: TimelineEntry[] = [
           NNPDF
         </a>{" "}
         collaboration, producing neural network parameterizations of the proton
-        which are actively being used by the research community. Feel free to
-        take a look at{" "}
+        which are actively being used by the research community. I presented my
+        research at several international conferences and finished my PhD with 6
+        publications all accepted in leading journals. Feel free to take a look
+        at{" "}
         <a
           href="https://www.repository.cam.ac.uk/items/6d92ca76-9aac-4be5-aefc-99d49a27406f"
           target="_blank"
