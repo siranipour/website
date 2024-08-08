@@ -19,8 +19,8 @@ const ExperienceEntries: ExperienceEntry[] = [
           critical code path for our trading systems. I am well versed in
           Pandas, xarray, and numpy; ML specific libraries such as pytorch,
           scikit-learn, and XGBoost/LightGBM amongst others, as well as general
-          data science technologies such as Redis, SQL and data viz tools like
-          matplotlib, seaborn, plotly etc.
+          data science technologies such as Redis, SQL and data visualization
+          tools like matplotlib, seaborn, plotly etc.
         </p>
       </>
     ),
