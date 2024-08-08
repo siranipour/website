@@ -14,7 +14,7 @@
 .experience_container > p {
     border: solid black 2px;
     border-radius: 10px;
-    box-shadow: 1px 1px 1px 0 black;
+    box-shadow: 0.5px 0.5px 0.5px 0 black;
 }
 
 @media (min-width: 650px) {
