@@ -29,10 +29,16 @@ const ExperienceEntries: ExperienceEntry[] = [
     title: "Neural Network Parton Distribution Functions",
     description: (
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed officia,
-        iste ullam eius quis, cupiditate et debitis mollitia laudantium earum
-        nihil tempore suscipit aperiam fugiat recusandae maiores odit. Id,
-        omnis!
+        During my PhD I was a core developer of the NNPDF collaboration,
+        applying deep learning techniques to elucidate the inner workings of the
+        proton. I built significant experience using Python (and some C++) to
+        develop and open source the{" "}
+        <a href="https://github.com/NNPDF/nnpdf/" target="_blank">
+          code
+        </a>
+        . I made extensive of modern deep learning libraries such as TensorFlow
+        as well as Python scientific libraries such as NumPy, dask, Numba,
+        matplotlib etc.
       </p>
     ),
   },
