@@ -1,6 +1,8 @@
 .experience_container {
     display: grid;
     gap: 1.5rem;
+    overflow:hidden;
+    padding: 1rem;
 }
 
 .experience_container > * {
@@ -16,8 +18,6 @@
     border: solid black 2px;
     border-radius: 10px;
     box-shadow: 0.5px 0.5px 0.5px 0 black;
-    position: relative;
-    left: -2px;
 }
 
 .experience_container > h3 {
