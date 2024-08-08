@@ -10,19 +10,19 @@ const ExperienceEntries: ExperienceEntry[] = [
   {
     title: "Xantium Group",
     description: (
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
-        doloribus placeat ut voluptatibus dicta laborum, sunt amet non vel
-        quibusdam, odio, accusantium optio nisi fugiat aspernatur recusandae
-        quis ducimus deleniti reprehenderit magni consequatur quas perferendis!
-        Maxime exercitationem tempora mollitia officia recusandae aliquid odit
-        reiciendis dicta quod repellat. Error, nesciunt. Quia, a cupiditate
-        temporibus iste illum dignissimos fugit sed deserunt magni quam non,
-        officia dolores doloribus debitis amet itaque. Officia asperiores
-        voluptate odit tempore optio sapiente quod animi, sint harum est cum!
-        Laboriosam ex fugit laudantium deserunt illo corrupti asperiores
-        architecto?
-      </p>
+      <>
+        <p>
+          As a quant I have extensive experience applying machine learning
+          techniques to large and noisy datasets for time series modelling. I
+          make substantial use of Python on a daily basis, building reliable and
+          performant production code that is deeply embedded in the mission
+          critical code path for our trading systems. I am well versed in
+          Pandas, xarray, and numpy; ML specific libraries such as pytorch,
+          scikit-learn, and XGBoost/LightGBM amongst others, as well as general
+          data science technologies such as Redis, SQL and data viz tools like
+          matplotlib, seaborn, plotly etc.
+        </p>
+      </>
     ),
   },
   {
@@ -36,9 +36,13 @@ const ExperienceEntries: ExperienceEntry[] = [
         <a href="https://github.com/NNPDF/nnpdf/" target="_blank">
           code
         </a>
-        . I made extensive of modern deep learning libraries such as TensorFlow
-        as well as Python scientific libraries such as NumPy, dask, Numba,
-        matplotlib etc.
+        . In maintaining the code base I became familiar with CI/CD, build
+        systems, git/github, Linux, and bash scripting. I made extensive of
+        modern deep learning libraries such as TensorFlow and Keras as well as
+        Python scientific libraries such as NumPy, scipy, sympy, dask, Numba,
+        matplotlib etc. I gained experience with distributed compute workloads
+        and technologies such as Slurm on our high performance cluster at
+        Cambridge: CSD3.
       </p>
     ),
   },
