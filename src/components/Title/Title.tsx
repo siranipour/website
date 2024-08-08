@@ -6,9 +6,9 @@ interface SectionTitle {
 
 const Title = ({ title }: SectionTitle) => {
   return (
-    <div className={style.container}>
-      <h3 id={`${title}`}>{title}</h3>
-    </div>
+    <h3 className={style.container} id={`${title}`}>
+      {title}
+    </h3>
   );
 };
 

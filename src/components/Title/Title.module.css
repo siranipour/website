@@ -7,9 +7,6 @@
     top: 0;
     background-color: white;
     z-index: 1;
-}
-
-.container h3 {
+    font-size: 2rem;
     text-decoration: underline;
-    font-size: 2rem
 }
