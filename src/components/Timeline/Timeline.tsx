@@ -84,8 +84,8 @@ const timelineEntries: TimelineEntry[] = [
         </a>{" "}
         of the Mathematical Tripos for my masters. I studied courses in
         fundamental physics such as Quantum Field Theory, String Theory, General
-        Relativity, or Supersymmetry. I graduated from my masters with a
-        distinction.
+        Relativity, and Supersymmetry, amongst others. I graduated from my
+        masters with a distinction.
       </p>
     ),
   },
@@ -103,11 +103,11 @@ const timelineEntries: TimelineEntry[] = [
         >
           natural sciences
         </a>{" "}
-        starting out with a broad span of scientific disciplines from physics to
-        materials sciences and chemistry. Over the years I specialized
-        exclusively in theoretical physics and mathematics, having picked up
-        some computational physics methods on the way. I graduated with a Double
-        First at the end of my BA.
+        starting out studying a broad span of scientific disciplines from
+        physics to materials sciences and chemistry. Over the years I
+        specialized exclusively in theoretical physics and mathematics, having
+        picked up some computational physics methods along the way. I graduated
+        with a Double First at the end of my BA.
       </p>
     ),
   },

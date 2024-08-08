@@ -39,10 +39,9 @@ const ExperienceEntries: ExperienceEntry[] = [
         . In maintaining the code base I became familiar with CI/CD, build
         systems, git/github, Linux, and bash scripting. I made extensive of
         modern deep learning libraries such as TensorFlow and Keras as well as
-        Python scientific libraries such as NumPy, scipy, sympy, dask, Numba,
-        matplotlib etc. I gained experience with distributed compute workloads
-        and technologies such as Slurm on our high performance cluster at
-        Cambridge: CSD3.
+        scientific libraries such as NumPy, scipy, sympy, dask, Numba etc. I
+        gained experience with distributed compute workloads and technologies
+        such as Slurm on our high performance cluster at Cambridge: CSD3.
       </p>
     ),
   },
