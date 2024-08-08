@@ -12,7 +12,7 @@ interface TimelineEntry {
 const timelineEntries: TimelineEntry[] = [
   {
     title: "Xantium Group",
-    subtitle: "Quantitative researcher",
+    subtitle: "Quantitative Researcher",
     startDate: "2022-02-28",
     endDate: "Present",
     description: (
