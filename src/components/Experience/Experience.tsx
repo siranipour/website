@@ -40,10 +40,10 @@ const ExperienceEntries: ExperienceEntry[] = [
     title: "Mathematics Undergraduate Supervisor",
     description: (
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed officia,
-        iste ullam eius quis, cupiditate et debitis mollitia laudantium earum
-        nihil tempore suscipit aperiam fugiat recusandae maiores odit. Id,
-        omnis!
+        During my PhD I did as much teaching as I could get away with. I taught
+        undergraduate mathematics courses in dynamics and relativity,
+        differential equations, and classical dynamics. I also spent some time
+        as an examiner for the STEP undergraduate admissions exam.
       </p>
     ),
   },
