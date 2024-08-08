@@ -9,6 +9,7 @@ import {
   Publications,
   publicationEntries,
 } from "./components/Publications/Publications";
+import Misc from "./components/Misc/Misc";
 import "./App.css";
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
       <Timeline entries={timelineEntries} title={"Timeline"} />
       <Experience title={"Experience"} entries={ExperienceEntries} />
       <Publications title={"Publications"} entries={publicationEntries} />
+      <Misc title={"Misc"} />
       <Contact title={"Contact"} />
     </>
   );
