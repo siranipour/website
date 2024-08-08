@@ -34,7 +34,7 @@ const timelineEntries: TimelineEntry[] = [
   {
     title: "PhD",
     subtitle: "Department of Applied Mathematics and Theoretical Physics",
-    startDate: "2018-01-01",
+    startDate: "2018-10-02",
     endDate: "2022-02-21",
     description: (
       <p>
@@ -55,8 +55,8 @@ const timelineEntries: TimelineEntry[] = [
   {
     title: "Master of Mathematics",
     subtitle: "Department of Applied Mathematics and Theoretical Physics",
-    startDate: "2017-01-01",
-    endDate: "2018-01-01",
+    startDate: "2017-10-03",
+    endDate: "2018-06-15",
     description: (
       <p>
         <a href="https://en.wikipedia.org/wiki/Part_III_of_the_Mathematical_Tripos">
@@ -71,8 +71,8 @@ const timelineEntries: TimelineEntry[] = [
   {
     title: "Bachelor of Arts",
     subtitle: "Natural Sciences",
-    startDate: "2014-01-01",
-    endDate: "2017-01-01",
+    startDate: "2014-10-07",
+    endDate: "2017-06-16",
     description: (
       <p>
         <a href="https://www.undergraduate.study.cam.ac.uk/courses/natural-sciences-ba-hons-msci">
