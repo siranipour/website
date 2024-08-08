@@ -21,8 +21,8 @@ const Header = () => {
         <p>
           Hi <span className={style.wave}>👋</span>, I'm Shayan, a quantitative
           researcher building statistical models and trading systems for the
-          financial markets. Before that, I finished a PhD from Cambridge
-          working on concepts in theoretical physics and marrying ideas from
+          financial markets. Before that, I finished my PhD from Cambridge
+          working on concepts in theoretical physics; marrying ideas from
           Quantum Field Theory and deep learning. Feel free to{" "}
           <a href="/resume" target="_blank">
             check out my CV.
