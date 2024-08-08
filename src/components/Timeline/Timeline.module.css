@@ -23,6 +23,10 @@
     text-align: center;
 }
 
+.timeline-entry > div:nth-child(2){
+    text-align: left;
+}
+
 .timeline-entry:nth-child(odd) {
     flex-direction: row-reverse;
 }

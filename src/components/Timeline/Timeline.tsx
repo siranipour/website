@@ -18,10 +18,12 @@ const timelineEntries: TimelineEntry[] = [
     description: (
       <p>
         After wrapping up my PhD I joined{" "}
-        <a href="https://www.xantium.com/">Xantium</a> as a Quantitative
-        Researcher. I build algorithmic trading strategies for the financial
-        markets and have accrued experience working on time series and
-        statistical modelling with large, noisy, low signal-to-noise ratio
+        <a href="https://www.xantium.com/" target="_blank">
+          Xantium
+        </a>{" "}
+        as a Quantitative Researcher. I build algorithmic trading strategies for
+        the financial markets and have accrued experience working on time series
+        and statistical modelling with large, noisy, low signal-to-noise ratio
         datasets. I make extensive use of Python building robust, reliable, and
         performant code.
       </p>
@@ -53,7 +55,10 @@ const timelineEntries: TimelineEntry[] = [
         collaboration, producing neural network parameterizations of the proton
         which are actively being used by the research community. Feel free to
         take a look at{" "}
-        <a href="https://www.repository.cam.ac.uk/items/6d92ca76-9aac-4be5-aefc-99d49a27406f">
+        <a
+          href="https://www.repository.cam.ac.uk/items/6d92ca76-9aac-4be5-aefc-99d49a27406f"
+          target="_blank"
+        >
           my thesis
         </a>
         : Precision QCD and Effective Field Theories with Machine Learning.
@@ -90,7 +95,10 @@ const timelineEntries: TimelineEntry[] = [
     description: (
       <p>
         At Cambridge, I did my undergrad in{" "}
-        <a href="https://www.undergraduate.study.cam.ac.uk/courses/natural-sciences-ba-hons-msci">
+        <a
+          href="https://www.undergraduate.study.cam.ac.uk/courses/natural-sciences-ba-hons-msci"
+          target="_blank"
+        >
           natural sciences
         </a>{" "}
         starting out with a broad span of scientific disciplines from physics to
