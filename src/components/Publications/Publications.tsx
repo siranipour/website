@@ -127,8 +127,8 @@ const Publications = ({
       <Title title={title} />
       <div>
         <p>
-          Below are some of the research papers I published during my time as a
-          PhD student
+          Below are the research papers I published during my time as a PhD
+          student.
         </p>
         <div className={style.table_container}>
           <table className={style.publication_table}>
