@@ -8,6 +8,13 @@
     ],
     "rewrites": [
       {
+        "source": "/sigpt/**",
+        "run": {
+          "serviceId": "sigpt-api",
+          "region": "europe-west2"
+        }
+      },
+      {
         "source": "**",
         "run": {
             "serviceId": "website-react-app",
