@@ -1,0 +1,49 @@
+*, *::after, *::before {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    margin-top: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 100px;
+}
+
+body {
+    max-width: 2000px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5rem
+}
+
+h4 {
+    font-size: 1.2rem
+}
+
+a {
+    color: blue;
+    display: inline-block;
+    transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transform-origin: 50%, 50%;
+}
+
+a:visited {
+    color: blue;
+}
+
+a:hover, a:visited:hover {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    color: red;
+}
