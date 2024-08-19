@@ -1,27 +1,16 @@
-import Header from "./components/Banner/Banner";
-import Contact from "./components/Contact/Contact";
-import {
-  Experience,
-  ExperienceEntries,
-} from "./components/Experience/Experience";
-import { Timeline, timelineEntries } from "./components/Timeline/Timeline";
-import {
-  Publications,
-  publicationEntries,
-} from "./components/Publications/Publications";
-import Misc from "./components/Misc/Misc";
-import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import Home from "./pages/home/Home";
+import Chat from "./pages/chat/Chat";
 
 const App = () => {
   return (
-    <>
-      <Header />
-      <Timeline entries={timelineEntries} title={"Timeline"} />
-      <Experience title={"Experience"} entries={ExperienceEntries} />
-      <Publications title={"Publications"} entries={publicationEntries} />
-      <Misc title={"Misc"} />
-      <Contact title={"Contact"} />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/chat" element={<Chat />} />
+      </Routes>
+    </Router>
   );
 };
 

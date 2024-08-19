@@ -12,6 +12,9 @@ const Misc = ({ title }: miscProp) => {
         During my free time I like taking photos, listening to music, and
         reading.
       </p>
+      <p>
+        Check out my GPT, <a href="/chat">siGPT</a>
+      </p>
     </>
   );
 };
