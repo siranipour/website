@@ -1,5 +1,6 @@
 import style from "./Timeline.module.css";
 import { Title } from "../Title/Title";
+import { motion } from "framer-motion";
 
 interface TimelineEntry {
   title: string;
@@ -122,14 +123,22 @@ const TimelineElement = ({
 }: TimelineEntry) => {
   return (
     <>
-      <div className={style["timeline-entry"]}>
+      <motion.div
+        className={style["timeline-entry"]}
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        transition={{
+          duration: 0.3,
+          type: "spring",
+        }}
+      >
         <div>
           <h3>{title}</h3>
           <h4>{subtitle}</h4>
           {startDate} to {endDate}
         </div>
         <div className={style.description}>{description}</div>
-      </div>
+      </motion.div>
     </>
   );
 };
