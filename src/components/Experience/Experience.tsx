@@ -65,6 +65,10 @@ const ExperienceElement = ({ title, description }: ExperienceEntry) => {
       className={style.experience_container}
       initial={{ scale: 0 }}
       whileInView={{ scale: 1 }}
+      viewport={{
+        once: true,
+        margin: "50px",
+      }}
       transition={{
         duration: 0.3,
         type: "spring",
