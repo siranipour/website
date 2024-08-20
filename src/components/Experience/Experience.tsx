@@ -1,5 +1,6 @@
 import style from "./Experience.module.css";
 import { Title } from "../Title/Title";
+import { motion } from "framer-motion";
 
 interface ExperienceEntry {
   title: string;
@@ -60,10 +61,18 @@ const ExperienceEntries: ExperienceEntry[] = [
 
 const ExperienceElement = ({ title, description }: ExperienceEntry) => {
   return (
-    <>
+    <motion.div
+      className={style.experience_container}
+      initial={{ scale: 0 }}
+      whileInView={{ scale: 1 }}
+      transition={{
+        duration: 0.3,
+        type: "spring",
+      }}
+    >
       <h3>{title}</h3>
       <p>{description}</p>
-    </>
+    </motion.div>
   );
 };
 
@@ -77,14 +86,12 @@ const Experience = ({
   return (
     <section>
       <Title title={title} />
-      <div className={style.experience_container}>
-        {entries.map((entry, index) => {
-          const props = {
-            ...entry,
-          };
-          return <ExperienceElement key={index} {...props} />;
-        })}
-      </div>
+      {entries.map((entry, index) => {
+        const props = {
+          ...entry,
+        };
+        return <ExperienceElement key={index} {...props} />;
+      })}
     </section>
   );
 };
