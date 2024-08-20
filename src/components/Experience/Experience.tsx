@@ -63,11 +63,11 @@ const ExperienceElement = ({ title, description }: ExperienceEntry) => {
   return (
     <motion.div
       className={style.experience_container}
-      initial={{ scale: 0 }}
-      whileInView={{ scale: 1 }}
+      initial={{ scale: 0.7, opacity: 0 }}
+      whileInView={{ scale: 1, opacity: 1 }}
       viewport={{
         once: true,
-        margin: "50px",
+        amount: 0.1,
       }}
       transition={{
         duration: 0.3,
