@@ -1,15 +1,15 @@
-import Header from "../../components/Banner/Banner";
-import Contact from "../../components/Contact/Contact";
+import Header from "./components/Banner/Banner";
+import Contact from "./components/Contact/Contact";
 import {
   Experience,
   ExperienceEntries,
-} from "../../components/Experience/Experience";
-import { Timeline, timelineEntries } from "../../components/Timeline/Timeline";
+} from "./components/Experience/Experience";
+import { Timeline, timelineEntries } from "./components/Timeline/Timeline";
 import {
   Publications,
   publicationEntries,
-} from "../../components/Publications/Publications";
-import Misc from "../../components/Misc/Misc";
+} from "./components/Publications/Publications";
+import Misc from "./components/Misc/Misc";
 
 const Home = () => {
   return (

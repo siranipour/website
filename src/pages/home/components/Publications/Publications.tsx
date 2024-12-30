@@ -1,5 +1,5 @@
 import style from "./Publications.module.css";
-import { Title } from "../Title/Title";
+import { Title } from "../../../../components/Title/Title";
 
 interface Publication {
   title: string;

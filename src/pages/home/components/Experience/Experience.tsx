@@ -1,5 +1,5 @@
 import style from "./Experience.module.css";
-import { Title } from "../Title/Title";
+import { Title } from "../../../../components/Title/Title";
 import { motion } from "framer-motion";
 
 interface ExperienceEntry {

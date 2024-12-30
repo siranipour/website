@@ -1,4 +1,5 @@
-import { Title } from "../Title/Title";
+import { Title } from "../../../../components/Title/Title";
+
 
 interface contactProp {
   title: string;
