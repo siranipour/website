@@ -11,7 +11,7 @@ import {
 } from "./components/Publications/Publications";
 import Misc from "./components/Misc/Misc";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
       <Header />
@@ -24,4 +24,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
