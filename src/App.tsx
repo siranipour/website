@@ -1,28 +1,8 @@
-import Header from "./components/Banner/Banner";
-import Contact from "./components/Contact/Contact";
-import {
-  Experience,
-  ExperienceEntries,
-} from "./components/Experience/Experience";
-import { Timeline, timelineEntries } from "./components/Timeline/Timeline";
-import {
-  Publications,
-  publicationEntries,
-} from "./components/Publications/Publications";
-import Misc from "./components/Misc/Misc";
+import Home from "./pages/home/Home";
 import "./App.css";
 
 const App = () => {
-  return (
-    <>
-      <Header />
-      <Timeline entries={timelineEntries} title={"Timeline"} />
-      <Experience title={"Experience"} entries={ExperienceEntries} />
-      <Publications title={"Publications"} entries={publicationEntries} />
-      <Misc title={"Misc"} />
-      <Contact title={"Contact"} />
-    </>
-  );
+  return <><Home/></>;
 };
 
 export default App;
