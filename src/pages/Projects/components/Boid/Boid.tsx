@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Title } from "../../../../components/Title/Title";
 import style from "./Boid.module.css";
 
-import init, { add, Boid, Simulation } from "../../../../../boids/pkg/boids";
+import init, { Boid, Simulation } from "../../../../../boids/pkg/boids";
 
 const Canvas = () => {
   let ref = useRef<HTMLCanvasElement>(null);

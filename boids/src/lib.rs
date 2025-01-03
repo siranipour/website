@@ -75,11 +75,6 @@ impl Boid {
     }
 }
 
-#[wasm_bindgen]
-pub fn add(left: i32, right: i32) -> i32 {
-    left + right
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
