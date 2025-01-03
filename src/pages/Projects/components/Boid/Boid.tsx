@@ -8,14 +8,7 @@ const Canvas = () => {
   let ref = useRef<HTMLCanvasElement>(null);
   const [isInitialized, setIsInitialized] = useState(false);
 
-  useEffect(() => {
-    const initializeWasm = async () => {
-      await init(); // Initialize WebAssembly
-      setIsInitialized(true); // Update state once initialized
-    };
-
-    initializeWasm();
-  }, []);
+  useEffect(() => {init().then(() => setIsInitialized(true))}, []);
 
   useEffect(() => {
     if (!isInitialized) return;
