@@ -41,15 +41,17 @@ impl Simulation {
 }
 
 #[wasm_bindgen]
-#[derive(Serialize, Deserialize)]
+#[derive(Default, Serialize, Deserialize)]
 pub struct Boid {
     pub x: f64,
     pub y: f64,
-    theta: f64,
+    pub theta: f64,
 }
 
+#[wasm_bindgen]
 impl Boid {
-    fn new() -> Self {
+    #[wasm_bindgen(constructor)]
+    pub fn new() -> Self {
         let mut rng = rand::thread_rng();
         let init_theta = rng.gen_range(0.0..2_f64 * PI);
         Self {
@@ -59,6 +61,7 @@ impl Boid {
         }
     }
 
+    #[wasm_bindgen(getter)]
     pub fn theta(&self) -> f64 {
         self.theta % (2_f64 * std::f64::consts::PI)
     }

@@ -16,16 +16,28 @@ const Canvas = () => {
     const draw = (context, boids: Boid[]) => {
       let { height, width } = context.canvas;
       context.clearRect(0, 0, context.canvas.width, context.canvas.height);
-      context.fillStyle = "red";
+
       boids.forEach((boid) => {
-        context.fillRect(boid.x * width, boid.y * height, 5.0, 5.0);
+        context.save();
+        context.translate(boid.x * width, boid.y * height);
+        context.rotate(boid.theta);
+
+        context.beginPath();
+        context.moveTo(10, 0);
+        context.lineTo(-5, -5);
+        context.lineTo(-5, 5);
+        context.closePath();
+
+        context.fillStyle = '#4A90E2';
+        context.fill();
+        context.restore();
       });
     };
 
     const canvas = ref.current;
     const context = canvas.getContext("2d");
 
-    const s = new Simulation(5);
+    const s = new Simulation(100);
 
     let animationId: number;
     const renderer = () => {
@@ -47,7 +59,7 @@ const Canvas = () => {
   }
   return (
     <>
-      <canvas ref={ref} />
+      <canvas ref={ref} width={800} height={600}/>
     </>
   );
 };
