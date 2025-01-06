@@ -1,15 +1,15 @@
-FROM rust:1.72-alpine AS rust-builder
+FROM rust:1.83-alpine AS rust-builder
 
 RUN apk add --no-cache build-base
 
 WORKDIR /rust-wasm
 
-COPY boids ./
+COPY boids ./boids
 
 RUN cargo install wasm-pack && \
-    wasm-pack build --target web
+    wasm-pack build --target web boids
 
-FROM node:20-alpine AS node-builder
+FROM node:23-alpine AS node-builder
 
 WORKDIR /app
 
@@ -18,6 +18,8 @@ COPY package.json .
 RUN npm install
 
 COPY . .
+
+COPY --from=rust-builder /rust-wasm/boids/pkg /app/boids/pkg
 
 RUN npm run build
 
