@@ -13,6 +13,7 @@ const Canvas = () => {
   useEffect(() => {
     if (!isInitialized) return;
 
+    // @ts-ignore
     const draw = (context, boids: Boid[]) => {
       let { height, width } = context.canvas;
       context.clearRect(0, 0, context.canvas.width, context.canvas.height);
@@ -20,6 +21,7 @@ const Canvas = () => {
       boids.forEach((boid) => {
         context.save();
         context.translate(boid.x * width, boid.y * height);
+        // @ts-ignore
         context.rotate(boid.theta);
 
         context.beginPath();
@@ -35,6 +37,7 @@ const Canvas = () => {
     };
 
     const canvas = ref.current;
+    // @ts-ignore
     const context = canvas.getContext("2d");
 
     const s = new Simulation(100);
