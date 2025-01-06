@@ -15,12 +15,11 @@ const Canvas = () => {
 
     // @ts-ignore
     const draw = (context, boids: Boid[]) => {
-      let { height, width } = context.canvas;
       context.clearRect(0, 0, context.canvas.width, context.canvas.height);
 
       boids.forEach((boid) => {
         context.save();
-        context.translate(boid.x * width, boid.y * height);
+        context.translate(boid.x, boid.y);
         // @ts-ignore
         context.rotate(boid.theta);
 
@@ -40,7 +39,7 @@ const Canvas = () => {
     // @ts-ignore
     const context = canvas.getContext("2d");
 
-    const s = new Simulation(100);
+    const s = new Simulation(100, 800, 600);
 
     let animationId: number;
     const renderer = () => {
