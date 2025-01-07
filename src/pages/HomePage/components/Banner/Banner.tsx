@@ -1,5 +1,6 @@
 import style from "./Banner.module.css";
 import Nav from "../Nav/Nav";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -25,8 +26,8 @@ const Header = () => {
           working on concepts in theoretical physics; marrying ideas from
           Quantum Field Theory and deep learning. Feel free to{" "}
           <a href="/resume" target="_blank">
-            check out my CV.
-          </a>
+            check out my CV
+          </a> or some of my <Link to="/projects">projects</Link>.
         </p>
       </div>
     </div>
