@@ -5,16 +5,16 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsValue;
 
 // in pixels the radius in which boids steer clear of obstructions
-const PROTECTED_RANGE: u32 = 100;
+const PROTECTED_RANGE: u32 = 80;
 // in pixels the radius in which boids observe flocking behaviour
 const VISUAL_RANGE: u32 = 300;
 
-const AVOID_FACTOR: f64 = 0.05;
-const COHESION_FACTOR: f64 = 0.005;
-const MATCH_FACTOR: f64 = 0.1;
+const AVOID_FACTOR: f64 = 0.013;
+const COHESION_FACTOR: f64 = 0.001;
+const MATCH_FACTOR: f64 = 0.02;
 
 // max speed in units of pixel per second
-const MAX_SPEED: f64 = 10_f64;
+const MAX_SPEED: f64 = 100_f64;
 const MIN_SPEED: f64 = 5_f64;
 
 #[wasm_bindgen]
@@ -39,12 +39,13 @@ impl Simulation {
         }
     }
 
-
     pub fn iterate(&mut self) {
         //TODO: probably not the most efficient implementation
         let prev_state = self.boids.clone();
 
         for boid in self.boids.iter_mut() {
+            let width = self.width as f64;
+            let height = self.height as f64;
             let mut close_dx = 0_f64;
             let mut close_dy = 0_f64;
 
@@ -54,33 +55,52 @@ impl Simulation {
             let mut x_avg = 0_f64;
             let mut y_avg = 0_f64;
             for other in prev_state.iter() {
-                let distance_px2 = (boid.x - other.x).powi(2) + (boid.y - other.y).powi(2);
+                let dx =
+                    shortest_distance(other.x.rem_euclid(width), boid.x.rem_euclid(width), width);
+                let dy = shortest_distance(
+                    other.y.rem_euclid(height),
+                    boid.y.rem_euclid(height),
+                    height,
+                );
+                let distance_px2 = dx.powi(2) + dy.powi(2);
 
-                if distance_px2 == 0.0{
+                if distance_px2 == 0.0 {
                     continue;
                 }
 
                 if distance_px2 <= (PROTECTED_RANGE as f64).powi(2) {
-                    close_dx += boid.x - other.x;
-                    close_dy += boid.y - other.y;
-                } else if distance_px2 <= (VISUAL_RANGE as f64).powi(2) {
+                    close_dx += dx;
+                    close_dy += dy;
+                }
+                if distance_px2 <= (VISUAL_RANGE as f64).powi(2) {
                     vx_avg += other.v_x;
                     vy_avg += other.v_y;
-                    x_avg += other.x;
-                    y_avg += other.y;
+                    x_avg += other.x.rem_euclid(width);
+                    y_avg += other.y.rem_euclid(height);
                     neighbors += 1;
                 }
             }
 
-            if neighbors != 0 {
+            let mut dx_to_center = 0.0;
+            let mut dy_to_center = 0.0;
+            if neighbors > 0 {
                 vx_avg /= neighbors as f64;
                 vy_avg /= neighbors as f64;
                 x_avg /= neighbors as f64;
                 y_avg /= neighbors as f64;
+
+                dx_to_center =
+                    shortest_distance(boid.x.rem_euclid(width), x_avg.rem_euclid(width), width);
+                dy_to_center =
+                    shortest_distance(boid.y.rem_euclid(height), y_avg.rem_euclid(height), height);
             }
 
-            boid.v_x += close_dx * AVOID_FACTOR + (vx_avg - boid.v_x) * MATCH_FACTOR + (x_avg - boid.x) * COHESION_FACTOR;
-            boid.v_y += close_dy * AVOID_FACTOR + (vy_avg - boid.v_y) * MATCH_FACTOR + (y_avg - boid.y) * COHESION_FACTOR;
+            boid.v_x += close_dx * AVOID_FACTOR
+                + (vx_avg - boid.v_x) * MATCH_FACTOR
+                + dx_to_center * COHESION_FACTOR;
+            boid.v_y += close_dy * AVOID_FACTOR
+                + (vy_avg - boid.v_y) * MATCH_FACTOR
+                + dy_to_center * COHESION_FACTOR;
 
             let speed = (boid.v_x.powi(2) + boid.v_y.powi(2)).powf(0.5);
             let clipped_speed = MAX_SPEED.min(speed).max(MIN_SPEED);
@@ -161,6 +181,17 @@ impl Boid {
         self.v_x = rand_vx;
         self.v_y = rand_vy;
         self.theta = self.v_y.atan2(self.v_x)
+    }
+}
+
+fn shortest_distance(a: f64, b: f64, size: f64) -> f64 {
+    let raw_distance = b - a;
+    if raw_distance > size / 2.0 {
+        raw_distance - size
+    } else if raw_distance < -size / 2.0 {
+        raw_distance + size
+    } else {
+        raw_distance
     }
 }
 

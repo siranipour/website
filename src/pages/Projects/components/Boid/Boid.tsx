@@ -6,6 +6,7 @@ import init, { Boid, Simulation } from "../../../../../boids/pkg/boids";
 
 const CANVAS_WIDTH = 2560
 const CANVAS_HEIGHT = 1440
+const N_BOIDS = 500
 
 const Canvas = () => {
   let ref = useRef<HTMLCanvasElement>(null);
@@ -44,7 +45,7 @@ const Canvas = () => {
     // @ts-ignore
     const context = canvas.getContext("2d");
 
-    const s = new Simulation(75, CANVAS_WIDTH, CANVAS_HEIGHT);
+    const s = new Simulation(N_BOIDS, CANVAS_WIDTH, CANVAS_HEIGHT);
     s.randomize();
 
     let animationId: number;
