@@ -8,9 +8,14 @@ use wasm_bindgen::JsValue;
 const PROTECTED_RANGE: u32 = 100;
 // in pixels the radius in which boids observe flocking behaviour
 const VISUAL_RANGE: u32 = 300;
-const AVOID_FACTOR: f64 = 0.1;
+
+const AVOID_FACTOR: f64 = 0.05;
+const COHESION_FACTOR: f64 = 0.005;
+const MATCH_FACTOR: f64 = 0.1;
+
 // max speed in units of pixel per second
 const MAX_SPEED: f64 = 10_f64;
+const MIN_SPEED: f64 = 5_f64;
 
 #[wasm_bindgen]
 pub struct Simulation {
@@ -42,19 +47,43 @@ impl Simulation {
         for boid in self.boids.iter_mut() {
             let mut close_dx = 0_f64;
             let mut close_dy = 0_f64;
+
+            let mut neighbors = 0;
+            let mut vx_avg = 0_f64;
+            let mut vy_avg = 0_f64;
+            let mut x_avg = 0_f64;
+            let mut y_avg = 0_f64;
             for other in prev_state.iter() {
                 let distance_px2 = (boid.x - other.x).powi(2) + (boid.y - other.y).powi(2);
-                if (distance_px2 != 0.0) && distance_px2 <= (PROTECTED_RANGE as f64).powi(2) {
+
+                if distance_px2 == 0.0{
+                    continue;
+                }
+
+                if distance_px2 <= (PROTECTED_RANGE as f64).powi(2) {
                     close_dx += boid.x - other.x;
                     close_dy += boid.y - other.y;
+                } else if distance_px2 <= (VISUAL_RANGE as f64).powi(2) {
+                    vx_avg += other.v_x;
+                    vy_avg += other.v_y;
+                    x_avg += other.x;
+                    y_avg += other.y;
+                    neighbors += 1;
                 }
             }
 
-            boid.v_x += close_dx * AVOID_FACTOR;
-            boid.v_y += close_dy * AVOID_FACTOR;
+            if neighbors != 0 {
+                vx_avg /= neighbors as f64;
+                vy_avg /= neighbors as f64;
+                x_avg /= neighbors as f64;
+                y_avg /= neighbors as f64;
+            }
+
+            boid.v_x += close_dx * AVOID_FACTOR + (vx_avg - boid.v_x) * MATCH_FACTOR + (x_avg - boid.x) * COHESION_FACTOR;
+            boid.v_y += close_dy * AVOID_FACTOR + (vy_avg - boid.v_y) * MATCH_FACTOR + (y_avg - boid.y) * COHESION_FACTOR;
 
             let speed = (boid.v_x.powi(2) + boid.v_y.powi(2)).powf(0.5);
-            let clipped_speed = MAX_SPEED.min(speed);
+            let clipped_speed = MAX_SPEED.min(speed).max(MIN_SPEED);
 
             boid.v_x *= clipped_speed / speed;
             boid.v_y *= clipped_speed / speed;
