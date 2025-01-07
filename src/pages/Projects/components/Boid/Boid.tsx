@@ -4,11 +4,16 @@ import style from "./Boid.module.css";
 
 import init, { Boid, Simulation } from "../../../../../boids/pkg/boids";
 
+const CANVAS_WIDTH = 2560
+const CANVAS_HEIGHT = 1440
+
 const Canvas = () => {
   let ref = useRef<HTMLCanvasElement>(null);
   const [isInitialized, setIsInitialized] = useState(false);
 
-  useEffect(() => {init().then(() => setIsInitialized(true))}, []);
+  useEffect(() => {
+    init().then(() => setIsInitialized(true));
+  }, []);
 
   useEffect(() => {
     if (!isInitialized) return;
@@ -29,7 +34,7 @@ const Canvas = () => {
         context.lineTo(-5, 5);
         context.closePath();
 
-        context.fillStyle = '#4A90E2';
+        context.fillStyle = "#4A90E2";
         context.fill();
         context.restore();
       });
@@ -39,11 +44,12 @@ const Canvas = () => {
     // @ts-ignore
     const context = canvas.getContext("2d");
 
-    const s = new Simulation(100, 800, 600);
+    const s = new Simulation(1000, CANVAS_WIDTH, CANVAS_HEIGHT);
+    s.randomize();
 
     let animationId: number;
     const renderer = () => {
-      s.randomize();
+      s.iterate();
       draw(context, s.get_boids());
       animationId = window.requestAnimationFrame(renderer);
     };
@@ -61,7 +67,7 @@ const Canvas = () => {
   }
   return (
     <>
-      <canvas ref={ref} width={800} height={600}/>
+      <canvas ref={ref} width={CANVAS_WIDTH} height={CANVAS_HEIGHT} />
     </>
   );
 };

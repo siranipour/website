@@ -1,5 +1,3 @@
-use std::f64::consts::PI;
-
 use rand::Rng;
 use serde::{Deserialize, Serialize};
 use serde_wasm_bindgen::to_value;
@@ -28,7 +26,13 @@ impl Simulation {
         }
     }
 
-    pub fn iterate(&mut self) {}
+    pub fn iterate(&mut self) {
+        let update_fn = |boid: &mut Boid| {
+            boid.x = (boid.x + boid.v_x).rem_euclid(self.width as f64);
+            boid.y = (boid.y + boid.v_y).rem_euclid(self.height as f64);
+        };
+        self.boids.iter_mut().for_each(update_fn);
+    }
 
     pub fn randomize(&mut self) {
         self.boids
@@ -53,6 +57,8 @@ impl Simulation {
 pub struct Boid {
     pub x: f64,
     pub y: f64,
+    pub v_x: f64,
+    pub v_y: f64,
     theta: f64,
 }
 
@@ -61,28 +67,34 @@ impl Boid {
     #[wasm_bindgen(constructor)]
     pub fn new() -> Self {
         let mut rng = rand::thread_rng();
-        let init_theta = rng.gen_range(0.0..2_f64 * PI);
+        let init_vx = rng.gen_range(-1.0..1.0);
+        let init_vy = rng.gen_range(-1.0..1.0);
         Self {
             x: 0_f64,
             y: 0_f64,
-            theta: init_theta,
+            v_x: init_vx,
+            v_y: init_vy,
+            theta: init_vy.atan2(init_vx)
         }
     }
 
-    #[wasm_bindgen(getter)]
     pub fn theta(&self) -> f64 {
-        self.theta % (2_f64 * std::f64::consts::PI)
+        self.v_y.atan2(self.v_x)
+
     }
 
     pub fn randomize(&mut self, max_x: f64, max_y: f64) {
         let mut rng = rand::thread_rng();
         let rand_x = rng.gen_range(0.0..max_x);
         let rand_y = rng.gen_range(0.0..max_y);
-        let rand_theta = rng.gen_range(0.0..2_f64 * PI);
+        let rand_vx = rng.gen_range(-1.0..1.0);
+        let rand_vy = rng.gen_range(-1.0..1.0);
 
         self.x = rand_x;
         self.y = rand_y;
-        self.theta = rand_theta;
+        self.v_x = rand_vx;
+        self.v_y = rand_vy;
+        self.theta = self.v_y.atan2(self.v_x)
     }
 }
 
