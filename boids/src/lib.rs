@@ -133,7 +133,8 @@ impl Simulation {
         self.boids
             .iter()
             .map(|boid| {
-                to_value(boid).unwrap() // Convert Boid to JsValue (serialize)
+                to_value(boid)
+                .expect("Failed to convert Boid to JsValue")
             })
             .collect()
     }
