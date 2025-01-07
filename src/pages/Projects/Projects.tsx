@@ -5,7 +5,7 @@ const Projects = () => {
   return (
     <>
       <Title title={"Projects"} />
-      <div>Hello there - here are some projects</div>
+      <div>Below are some projects I've worked on in my free time.</div>
       <BoidSimulation />
     </>
   );

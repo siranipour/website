@@ -4,9 +4,9 @@ import style from "./Boid.module.css";
 
 import init, { Boid, Simulation } from "../../../../../boids/pkg/boids";
 
-const CANVAS_WIDTH = 2560
-const CANVAS_HEIGHT = 1440
-const N_BOIDS = 500
+const CANVAS_WIDTH = 2560;
+const CANVAS_HEIGHT = 1440;
+const N_BOIDS = 500;
 
 const Canvas = () => {
   let ref = useRef<HTMLCanvasElement>(null);
@@ -78,9 +78,14 @@ const BoidSimulation = () => {
     <>
       <Title title={"Boids"} />
       <div>
-        Below implements the Boids algorithm. The canvas rendering is handled by
-        JavaScript, but the underlying computation is performed in Rust running
-        directly in your browser through WebAssembly.
+        Below implements the{" "}
+        <a href="https://en.wikipedia.org/wiki/Boids" target="_blank">
+          Boids
+        </a>{" "}
+        algorithm which attempts to simulate the flocking behaviour of birds.
+        The canvas rendering is handled by JavaScript, but the underlying
+        computation is performed in Rust running directly in your browser
+        through WebAssembly.
       </div>
       <div className={style["canvas-container"]}>
         <Canvas />
