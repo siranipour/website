@@ -213,9 +213,17 @@ mod tests {
     }
 
     #[test]
-    fn test_sim_ranomization() {
+    fn test_sim_randomization() {
         let mut s = Simulation::new(50, WIDTH, HEIGHT);
         s.randomize();
+        assert_eq!(s.boids.len(), 50);
+    }
+
+    #[test]
+    fn test_sim() {
+        let mut s = Simulation::new(50, WIDTH, HEIGHT);
+        s.randomize();
+        s.iterate();
         assert_eq!(s.boids.len(), 50);
     }
 }
