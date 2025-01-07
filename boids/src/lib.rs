@@ -4,6 +4,14 @@ use serde_wasm_bindgen::to_value;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsValue;
 
+// in pixels the radius in which boids steer clear of obstructions
+const PROTECTED_RANGE: u32 = 100;
+// in pixels the radius in which boids observe flocking behaviour
+const VISUAL_RANGE: u32 = 300;
+const AVOID_FACTOR: f64 = 0.1;
+// max speed in units of pixel per second
+const MAX_SPEED: f64 = 10_f64;
+
 #[wasm_bindgen]
 pub struct Simulation {
     boids: Vec<Boid>,
@@ -26,10 +34,40 @@ impl Simulation {
         }
     }
 
+
     pub fn iterate(&mut self) {
+        //TODO: probably not the most efficient implementation
+        let prev_state = self.boids.clone();
+
+        for boid in self.boids.iter_mut() {
+            let mut close_dx = 0_f64;
+            let mut close_dy = 0_f64;
+            for other in prev_state.iter() {
+                let distance_px2 = (boid.x - other.x).powi(2) + (boid.y - other.y).powi(2);
+                if (distance_px2 != 0.0) && distance_px2 <= (PROTECTED_RANGE as f64).powi(2) {
+                    close_dx += boid.x - other.x;
+                    close_dy += boid.y - other.y;
+                }
+            }
+
+            boid.v_x += close_dx * AVOID_FACTOR;
+            boid.v_y += close_dy * AVOID_FACTOR;
+
+            let speed = (boid.v_x.powi(2) + boid.v_y.powi(2)).powf(0.5);
+            let clipped_speed = MAX_SPEED.min(speed);
+
+            boid.v_x *= clipped_speed / speed;
+            boid.v_y *= clipped_speed / speed;
+        }
+
+        self.render();
+    }
+
+    pub fn render(&mut self) {
         let update_fn = |boid: &mut Boid| {
             boid.x = (boid.x + boid.v_x).rem_euclid(self.width as f64);
             boid.y = (boid.y + boid.v_y).rem_euclid(self.height as f64);
+            boid.theta = boid.theta()
         };
         self.boids.iter_mut().for_each(update_fn);
     }
@@ -53,7 +91,7 @@ impl Simulation {
 }
 
 #[wasm_bindgen]
-#[derive(Default, Serialize, Deserialize)]
+#[derive(Clone, Default, Serialize, Deserialize)]
 pub struct Boid {
     pub x: f64,
     pub y: f64,
@@ -74,13 +112,12 @@ impl Boid {
             y: 0_f64,
             v_x: init_vx,
             v_y: init_vy,
-            theta: init_vy.atan2(init_vx)
+            theta: init_vy.atan2(init_vx),
         }
     }
 
     pub fn theta(&self) -> f64 {
         self.v_y.atan2(self.v_x)
-
     }
 
     pub fn randomize(&mut self, max_x: f64, max_y: f64) {

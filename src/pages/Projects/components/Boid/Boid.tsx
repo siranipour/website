@@ -44,7 +44,7 @@ const Canvas = () => {
     // @ts-ignore
     const context = canvas.getContext("2d");
 
-    const s = new Simulation(1000, CANVAS_WIDTH, CANVAS_HEIGHT);
+    const s = new Simulation(50, CANVAS_WIDTH, CANVAS_HEIGHT);
     s.randomize();
 
     let animationId: number;
