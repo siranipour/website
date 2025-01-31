@@ -31,10 +31,8 @@ const MessageInput = ({ onTextSubmit, loading }) => {
         <IconButton
           loading={loading}
           onClick={() => onTextSubmit(text)}
-          //radius="full"
-          color="gray"
-          variant="outline"
-          highContrast
+          radius="full"
+          variant="soft"
         >
           <PaperPlaneIcon width="20" height="20" />
         </IconButton>
