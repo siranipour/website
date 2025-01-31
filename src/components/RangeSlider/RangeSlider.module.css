@@ -38,9 +38,10 @@
 	display: block;
 	width: 20px;
 	height: 20px;
-	background-color: #ddd;
+	background-color: #eee;
 	box-shadow: 0 2px 4px black;
 	border-radius: 10px;
+    border: 1px solid black;
     transition: all 0.2s;
 }
 .SliderThumb:hover {
