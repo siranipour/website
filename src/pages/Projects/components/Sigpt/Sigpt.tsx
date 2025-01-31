@@ -19,11 +19,10 @@ const SiGPT = () => {
   }, [responses]);
 
   const handleTextSubmit = (text: string) => {
-    //TODO: remove this in production
     if (!isLoading) {
       setIsLoading(true);
       fetch(
-        `http://localhost:8000/sigpt/?prompt=${text}&batches=${responses}&max_len=${length}`,
+        `/sigpt/?prompt=${text}&batches=${responses}&max_len=${length}`,
         {
           method: "POST",
           headers: {
