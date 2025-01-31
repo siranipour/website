@@ -30,23 +30,25 @@ const SiGPT = () => {
         </a>{" "}
         dataset.
       </div>
-      <div>
-        <RangeSlider
-          displayText={"Responses"}
-          min={1}
-          max={10}
-          defaultValue={responses}
-          onValueChange={setResponses}
-        />
-        <RangeSlider
-          displayText={"Length"}
-          min={1}
-          max={50}
-          defaultValue={length}
-          onValueChange={setLength}
-        />
+      <div className={style['input-wrapper']}>
+        <div className={style["input-container"]}>
+          <RangeSlider
+            displayText={"Number of responses"}
+            min={1}
+            max={10}
+            defaultValue={responses}
+            onValueChange={setResponses}
+          />
+          <RangeSlider
+            displayText={"Maximum response length"}
+            min={1}
+            max={50}
+            defaultValue={length}
+            onValueChange={setLength}
+          />
+          <MessageInput />
+        </div>
       </div>
-      <MessageInput />
       <Response n={responses} />
     </>
   );

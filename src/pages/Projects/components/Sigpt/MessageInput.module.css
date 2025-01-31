@@ -1,9 +1,12 @@
+.textarea-container {
+    flex: 0 0 100%;
+}
+
 .prompt-input {
-  width: 80%;
+  width: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 3em;
   padding: 1em;
   resize: none;
   background-color: #ddd;

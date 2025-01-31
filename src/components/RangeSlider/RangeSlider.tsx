@@ -9,7 +9,9 @@ const RangeSlider = ({
   onValueChange,
 }) => (
   <div className={style["slider-container"]}>
-    {displayText}: {defaultValue}
+    <div className={style["display-container"]}>
+      {displayText}: {defaultValue}
+    </div>
     <Slider.Root
       className={style["SliderRoot"]}
       defaultValue={[defaultValue]}

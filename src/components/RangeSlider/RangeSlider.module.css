@@ -1,3 +1,14 @@
+.slider-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    flex-wrap: wrap;
+}
+
+.display-container {
+    min-width: 200px;
+}
+
 .SliderRoot {
 	position: relative;
 	display: flex;
@@ -27,15 +38,16 @@
 	display: block;
 	width: 20px;
 	height: 20px;
-	background-color: cyan;
-	box-shadow: 0 2px 10px black;
+	background-color: #ddd;
+	box-shadow: 0 2px 4px black;
 	border-radius: 10px;
+    transition: all 0.2s;
 }
 .SliderThumb:hover {
-	background-color: red;
+	background-color: #eee;
 }
 .SliderThumb:focus {
 	outline: none;
-	box-shadow: 0 0 0 1px blue;
+	box-shadow: 0 0 0 1px #333;
 }
 
