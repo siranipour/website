@@ -17,18 +17,22 @@ const SiGPT = () => {
 
   const handleTextSubmit = (text: string) => {
     //TODO: remove this in production
-    fetch(
-      `http://localhost:8000/sigpt/?prompt=${text}&batches=${responses}&max_len=${length}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+    if (!isLoading) {
+      setIsLoading(true);
+      fetch(
+        `http://localhost:8000/sigpt/?prompt=${text}&batches=${responses}&max_len=${length}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
         },
-      },
-    )
-      //TODO: handle errors etc
-      .then(response => response.json())
-      .then(data => setContent(data.flatMap((obj) => obj.output)));
+      )
+        //TODO: handle errors etc
+        .then((response) => response.json())
+        .then((data) => setContent(data.flatMap((obj) => obj.output)))
+        .finally(() => setIsLoading(false));
+    }
   };
 
   return (
