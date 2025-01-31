@@ -76,7 +76,7 @@ const SiGPT = () => {
           <MessageInput loading={isLoading} onTextSubmit={handleTextSubmit} />
         </div>
       </div>
-      <Response content={content} />
+      <Response loading={isLoading} content={content} />
     </>
   );
 };
