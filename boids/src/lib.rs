@@ -46,14 +46,11 @@ impl Simulation {
         for boid in self.boids.iter_mut() {
             let width = self.width as f64;
             let height = self.height as f64;
-            let mut close_dx = 0_f64;
-            let mut close_dy = 0_f64;
+            let (mut close_dx, mut close_dy) = (0_f64, 0_f64);
 
             let mut neighbors = 0;
-            let mut vx_avg = 0_f64;
-            let mut vy_avg = 0_f64;
-            let mut x_avg = 0_f64;
-            let mut y_avg = 0_f64;
+            let (mut vx_avg, mut vy_avg) = (0_f64, 0_f64);
+            let (mut x_avg, mut y_avg) = (0_f64, 0_f64);
             for other in prev_state.iter() {
                 let dx =
                     shortest_distance(other.x.rem_euclid(width), boid.x.rem_euclid(width), width);
@@ -81,8 +78,7 @@ impl Simulation {
                 }
             }
 
-            let mut dx_to_center = 0.0;
-            let mut dy_to_center = 0.0;
+            let (mut dx_to_center, mut dy_to_center) = (0.0, 0.0);
             if neighbors > 0 {
                 vx_avg /= neighbors as f64;
                 vy_avg /= neighbors as f64;
