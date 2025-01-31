@@ -5,6 +5,9 @@ import MessageInput from "./MessageInput.tsx";
 import Response from "./Response.tsx";
 import style from "./Sigpt.module.css";
 
+const MAX_BATCHES = 10;
+const MAX_LENGTH = 100;
+
 const SiGPT = () => {
   const [responses, setResponses] = useState(3);
   const [length, setLength] = useState(10);
@@ -62,14 +65,14 @@ const SiGPT = () => {
           <RangeSlider
             displayText={"Number of responses"}
             min={1}
-            max={10}
+            max={MAX_BATCHES}
             defaultValue={responses}
             onValueChange={setResponses}
           />
           <RangeSlider
             displayText={"Maximum response length"}
             min={1}
-            max={50}
+            max={MAX_LENGTH}
             defaultValue={length}
             onValueChange={setLength}
           />
