@@ -10,10 +10,21 @@ const SiGPT = () => {
   const [length, setLength] = useState(10);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleTextChange = (newText) => {
-    setIsLoading(true);
-    console.log(newText);
-    setIsLoading(false);
+  const handleTextSubmit = (text: string) => {
+    //TODO: remove this in production
+    fetch(
+      `http://localhost:8000/sigpt/?prompt=${text}&batches=${responses}&max_len=${length}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      },
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+      });
   };
 
   return (
@@ -54,7 +65,7 @@ const SiGPT = () => {
             defaultValue={length}
             onValueChange={setLength}
           />
-          <MessageInput onTextSubmit={handleTextChange} />
+          <MessageInput onTextSubmit={handleTextSubmit} />
         </div>
       </div>
       <Response n={responses} />
