@@ -1,23 +1,9 @@
 import { useState } from "react";
 import { Title } from "../../../../components/Title/Title";
+import RangeSlider from "../../../../components/RangeSlider/RangeSlider";
 import MessageInput from "./MessageInput.tsx";
 import Response from "./Response.tsx";
 import style from "./Sigpt.module.css";
-
-const RangeSlider = ({ value, onChange, display }) => {
-  return (
-    <div>
-      <input
-        type="range"
-        min="1"
-        max="5"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-      />
-      <p>{display}: {value}</p>
-    </div>
-  );
-};
 
 const SiGPT = () => {
   const [responses, setResponses] = useState(3);
@@ -45,9 +31,21 @@ const SiGPT = () => {
         dataset.
       </div>
       <MessageInput />
-      <RangeSlider value={responses} onChange={setResponses} display="Responses" />
-      <RangeSlider value={length} onChange={setLength} display={"Length"} />
-      <Response n={responses}/>
+      <RangeSlider
+        minValue="1"
+        maxValue="10"
+        initValue={responses}
+        onChange={setResponses}
+        display="Responses"
+      />
+      <RangeSlider
+        minValue="1"
+        maxValue="50"
+        initValue={length}
+        onChange={setLength}
+        display={"Length"}
+      />
+      <Response n={responses} />
     </>
   );
 };
