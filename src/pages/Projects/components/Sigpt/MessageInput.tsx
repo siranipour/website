@@ -1,7 +1,10 @@
 import { useState } from "react";
 import style from "./MessageInput.module.css";
 
-const MessageInput = ({ onTextSubmit }) => {
+import { IconButton } from "@radix-ui/themes";
+import { PaperPlaneIcon } from "@radix-ui/react-icons";
+
+const MessageInput = ({ onTextSubmit, loading }) => {
   const [text, setText] = useState("");
 
   const handleChange = (e) => {
@@ -24,6 +27,18 @@ const MessageInput = ({ onTextSubmit }) => {
         onKeyDown={handleKeyDown}
         placeholder="Enter prompt..."
       ></textarea>
+      <div className={style["submit-button-container"]}>
+        <IconButton
+          loading={loading}
+          onClick={() => onTextSubmit(text)}
+          //radius="full"
+          color="gray"
+          variant="outline"
+          highContrast
+        >
+          <PaperPlaneIcon width="20" height="20" />
+        </IconButton>
+      </div>
     </div>
   );
 };

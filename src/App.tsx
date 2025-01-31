@@ -1,4 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "@radix-ui/themes/styles.css";
+import { Theme } from "@radix-ui/themes";
 
 import HomePage from "./pages/HomePage/HomePage";
 import Projects from "./pages/Projects/Projects";
@@ -11,7 +13,11 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <Theme>
+      <RouterProvider router={router} />
+    </Theme>
+  );
 };
 
 export default App;

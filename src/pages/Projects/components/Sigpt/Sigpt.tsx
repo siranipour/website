@@ -73,7 +73,7 @@ const SiGPT = () => {
             defaultValue={length}
             onValueChange={setLength}
           />
-          <MessageInput onTextSubmit={handleTextSubmit} />
+          <MessageInput loading={isLoading} onTextSubmit={handleTextSubmit} />
         </div>
       </div>
       <Response content={content} />

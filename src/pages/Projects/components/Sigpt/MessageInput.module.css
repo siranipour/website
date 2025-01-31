@@ -1,13 +1,12 @@
 .textarea-container {
-    flex: 0 0 100%;
+  position: relative;
 }
 
 .prompt-input {
   width: 100%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
   padding: 1em;
+  padding-right: 50px;
   resize: none;
   background-color: #ddd;
   border-radius: 10px;
@@ -34,4 +33,11 @@
 
 .prompt-input:focus::placeholder {
   color: transparent;
+}
+
+.submit-button-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(-150%);
+  left: 100%;
 }
