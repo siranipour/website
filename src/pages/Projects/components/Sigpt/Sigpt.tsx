@@ -8,6 +8,14 @@ import style from "./Sigpt.module.css";
 const SiGPT = () => {
   const [responses, setResponses] = useState(3);
   const [length, setLength] = useState(10);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleTextChange = (newText) => {
+    setIsLoading(true);
+    console.log(newText);
+    setIsLoading(false);
+  };
+
   return (
     <>
       <Title title={"siGPT"} />
@@ -30,7 +38,7 @@ const SiGPT = () => {
         </a>{" "}
         dataset.
       </div>
-      <div className={style['input-wrapper']}>
+      <div className={style["input-wrapper"]}>
         <div className={style["input-container"]}>
           <RangeSlider
             displayText={"Number of responses"}
@@ -46,7 +54,7 @@ const SiGPT = () => {
             defaultValue={length}
             onValueChange={setLength}
           />
-          <MessageInput />
+          <MessageInput onTextSubmit={handleTextChange} />
         </div>
       </div>
       <Response n={responses} />
