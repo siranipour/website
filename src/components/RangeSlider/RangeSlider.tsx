@@ -1,31 +1,29 @@
-interface SliderProps {
-  minValue: string | number;
-  maxValue: string | number;
-  initValue: string | number;
-  onChange: React.Dispatch<React.SetStateAction<string | number>>;
-  display: string;
-}
+import * as Slider from "@radix-ui/react-slider";
+import style from "./RangeSlider.module.css";
+
 const RangeSlider = ({
-  minValue,
-  maxValue,
-  initValue,
-  onChange,
-  display,
-}: SliderProps) => {
-  return (
-    <div>
-      <input
-        type="range"
-        min={minValue}
-        max={maxValue}
-        value={initValue}
-        onChange={(e) => onChange(e.target.value)}
-      />
-      <p>
-        {display}: {initValue}
-      </p>
-    </div>
-  );
-};
+  displayText,
+  defaultValue,
+  min,
+  max,
+  onValueChange,
+}) => (
+  <div className={style["slider-container"]}>
+    {displayText}: {defaultValue}
+    <Slider.Root
+      className={style["SliderRoot"]}
+      defaultValue={[defaultValue]}
+      min={min}
+      max={max}
+      step={1}
+      onValueChange={onValueChange}
+    >
+      <Slider.Track className={style["SliderTrack"]}>
+        <Slider.Range className={style["SliderRange"]} />
+      </Slider.Track>
+      <Slider.Thumb className={style["SliderThumb"]} aria-label="Volume" />
+    </Slider.Root>
+  </div>
+);
 
 export default RangeSlider;
