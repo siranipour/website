@@ -18,7 +18,7 @@ const RangeSlider = ({
       min={min}
       max={max}
       step={1}
-      onValueChange={onValueChange}
+      onValueChange={(value) => onValueChange(value[0])}
     >
       <Slider.Track className={style["SliderTrack"]}>
         <Slider.Range className={style["SliderRange"]} />

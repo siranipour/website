@@ -1,11 +1,11 @@
 import style from "./Response.module.css";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Response = ({ n }: { n: number }) => {
+const Response = ({ content }: { content: Array<string> }) => {
   return (
     <div className={style["response-container"]}>
       <AnimatePresence>
-        {Array.from({ length: n }, (_, index) => (
+        {content.map((entry, index) => (
           <motion.div
             key={index}
             layout
@@ -14,7 +14,7 @@ const Response = ({ n }: { n: number }) => {
             exit={{ opacity: 0, scale: 0.0 }}
             transition={{ duration: 0.1, type: "spring" }}
           >
-            Div {index + 1}
+            {entry}
           </motion.div>
         ))}
       </AnimatePresence>

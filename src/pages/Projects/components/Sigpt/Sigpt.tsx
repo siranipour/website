@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Title } from "../../../../components/Title/Title";
 import RangeSlider from "../../../../components/RangeSlider/RangeSlider";
 import MessageInput from "./MessageInput.tsx";
@@ -9,6 +9,11 @@ const SiGPT = () => {
   const [responses, setResponses] = useState(3);
   const [length, setLength] = useState(10);
   const [isLoading, setIsLoading] = useState(false);
+  const [content, setContent] = useState(new Array(responses).fill(""));
+
+  useEffect(() => {
+    setContent(new Array(responses).fill(""));
+  }, [responses]);
 
   const handleTextSubmit = (text: string) => {
     //TODO: remove this in production
@@ -21,10 +26,9 @@ const SiGPT = () => {
         },
       },
     )
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success:", data);
-      });
+      //TODO: handle errors etc
+      .then(response => response.json())
+      .then(data => setContent(data.flatMap((obj) => obj.output)));
   };
 
   return (
@@ -68,7 +72,7 @@ const SiGPT = () => {
           <MessageInput onTextSubmit={handleTextSubmit} />
         </div>
       </div>
-      <Response n={responses} />
+      <Response content={content} />
     </>
   );
 };
