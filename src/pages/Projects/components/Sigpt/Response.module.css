@@ -8,6 +8,7 @@
 .response-container > div {
   flex-grow: 1;
   min-width: 300px;
+  box-shadow: 1px 1px 1px black;
 }
 
 .response-container > div {
