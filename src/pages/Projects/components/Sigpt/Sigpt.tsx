@@ -19,6 +19,9 @@ const SiGPT = () => {
   }, [responses]);
 
   const handleTextSubmit = (text: string) => {
+    if (text === "") {
+      return;
+    }
     if (!isLoading) {
       setIsLoading(true);
       fetch(
