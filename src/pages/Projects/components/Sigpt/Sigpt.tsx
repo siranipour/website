@@ -31,9 +31,18 @@ const SiGPT = () => {
           },
         },
       )
-        //TODO: handle errors etc
-        .then((response) => response.json())
+        .then((response) => {
+          // Check if the response is successful (status code 2xx)
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
         .then((data) => setContent(data.flatMap((obj) => obj.output)))
+        .catch((error) => {
+          console.error("There was an error with the fetch operation:", error);
+          setContent(["Error loading data. Please try again later."]);
+        })
         .finally(() => setIsLoading(false));
     }
   };
