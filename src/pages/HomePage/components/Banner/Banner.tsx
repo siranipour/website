@@ -11,7 +11,7 @@ const Header = () => {
             <h1 className={style.typewriter}>Shayan Iranipour</h1>
           </div>
           <h2 className={style.appear}>
-            Quantitative Researcher, <br></br> Cambridge Theoretical Physics PhD
+            Senior Research Engineer, <br></br> Cambridge Theoretical Physics PhD
           </h2>
         </div>
         <div className={style.appear}>
@@ -20,14 +20,18 @@ const Header = () => {
       </div>
       <div className={`${style.abstract} ${style.appear}`}>
         <p>
-          Hi <span className={style.wave}>👋</span>, I'm Shayan, a quantitative
-          researcher building statistical models and trading systems for the
-          financial markets. Before that, I finished my PhD from Cambridge
-          working on concepts in theoretical physics; marrying ideas from
-          Quantum Field Theory and deep learning. Feel free to{" "}
+          Hi <span className={style.wave}>👋</span>, I'm Shayan, a research
+          engineer at{" "}
+          <a href="https://www.isomorphiclabs.com/" target="_blank">
+            Isomorphic Labs
+          </a>{" "}
+          working on AI for drug discovery. Previously a quant building
+          statistical models and trading systems. I hold a PhD from Cambridge in
+          theoretical physics and deep learning. Feel free to{" "}
           <a href="/resume" target="_blank">
             check out my CV
-          </a> or some of my <Link to="/projects">projects</Link>.
+          </a>{" "}
+          or some of my <Link to="/projects">projects</Link>.
         </p>
       </div>
     </div>

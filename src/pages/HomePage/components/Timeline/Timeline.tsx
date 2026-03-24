@@ -12,20 +12,39 @@ interface TimelineEntry {
 
 const timelineEntries: TimelineEntry[] = [
   {
+    title: "Isomorphic Labs",
+    subtitle: "Senior Research Engineer",
+    startDate: "2025-01-01",
+    endDate: "Present",
+    description: (
+      <p>
+        I joined{" "}
+        <a href="https://www.isomorphiclabs.com/" target="_blank">
+          Isomorphic Labs
+        </a>{" "}
+        as a Senior Research Engineer, working at the frontier of AI-driven drug
+        discovery. Isomorphic Labs was spun out of Google DeepMind with the
+        mission of accelerating the development of new medicines using machine
+        learning. I apply my background in deep learning and scientific computing
+        to research problems at the interface of AI and structural biology.
+      </p>
+    ),
+  },
+  {
     title: "Xantium Group",
     subtitle: "Quantitative Researcher",
     startDate: "2022-02-28",
-    endDate: "Present",
+    endDate: "2025-01-01",
     description: (
       <p>
         After wrapping up my PhD I joined{" "}
         <a href="https://www.xantium.com/" target="_blank">
           Xantium
         </a>{" "}
-        as a Quantitative Researcher. I build algorithmic trading strategies for
-        the financial markets and have accrued experience working on time series
-        and statistical modelling with large, noisy, low signal-to-noise ratio
-        datasets. I make extensive use of Python building robust, reliable, and
+        as a Quantitative Researcher. I built algorithmic trading strategies for
+        the financial markets and accrued experience working on time series and
+        statistical modelling with large, noisy, low signal-to-noise ratio
+        datasets. I made extensive use of Python building robust, reliable, and
         performant code.
       </p>
     ),

@@ -9,19 +9,34 @@ interface ExperienceEntry {
 
 const ExperienceEntries: ExperienceEntry[] = [
   {
+    title: "Isomorphic Labs",
+    description: (
+      <>
+        <p>
+          As a Senior Research Engineer at Isomorphic Labs I work on applying
+          state-of-the-art machine learning to drug discovery. I bring my
+          experience in deep learning, scientific computing, and large-scale
+          data pipelines to research at the intersection of AI and structural
+          biology, contributing to efforts that aim to transform how medicines
+          are developed.
+        </p>
+      </>
+    ),
+  },
+  {
     title: "Xantium Group",
     description: (
       <>
         <p>
-          As a quant I have extensive experience applying machine learning
+          As a quant I gained extensive experience applying machine learning
           techniques to large and noisy datasets for time series modelling. I
-          make substantial use of Python on a daily basis, building reliable and
-          performant production code that is deeply embedded in the mission
-          critical code path for our trading systems. I am well versed in
-          Pandas, xarray, and numpy; ML specific libraries such as pytorch,
-          scikit-learn, and XGBoost/LightGBM amongst others, as well as general
-          data science technologies such as Redis, SQL and data visualization
-          tools like matplotlib, seaborn, plotly etc.
+          made substantial use of Python on a daily basis, building reliable and
+          performant production code deeply embedded in the mission critical code
+          path for trading systems. I am well versed in Pandas, xarray, and
+          numpy; ML specific libraries such as pytorch, scikit-learn, and
+          XGBoost/LightGBM amongst others, as well as general data science
+          technologies such as Redis, SQL and data visualization tools like
+          matplotlib, seaborn, and plotly.
         </p>
       </>
     ),
