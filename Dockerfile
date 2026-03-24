@@ -6,7 +6,7 @@ WORKDIR /rust-wasm
 
 COPY boids ./boids
 
-RUN cargo install wasm-pack && \
+RUN cargo install wasm-pack --locked && \
     wasm-pack build --target web boids
 
 FROM node:23-alpine AS node-builder
