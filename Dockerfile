@@ -1,4 +1,4 @@
-FROM rust:1.88-alpine AS rust-builder
+FROM rust:alpine AS rust-builder
 
 RUN apk add --no-cache build-base
 
@@ -26,4 +26,3 @@ RUN npm run build
 EXPOSE 8080
 
 CMD ["npm", "run", "start"]
-
