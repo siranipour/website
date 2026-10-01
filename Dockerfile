@@ -1,4 +1,4 @@
-FROM rust:alpine AS rust-builder
+FROM rust:1.91-alpine AS rust-builder
 
 RUN apk add --no-cache build-base
 
@@ -6,7 +6,7 @@ WORKDIR /rust-wasm
 
 COPY boids ./boids
 
-RUN cargo install wasm-pack --locked && \
+RUN cargo install wasm-pack --version 0.15.0 --locked && \
     wasm-pack build --target web boids
 
 FROM node:23-alpine AS node-builder
