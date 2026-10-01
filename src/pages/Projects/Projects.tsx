@@ -2,6 +2,7 @@ import { motion } from "framer-motion"; // Import framer-motion
 import { Title } from "../../components/Title/Title";
 import BoidSimulation from "./components/Boid/Boid";
 import SiGPT from "./components/Sigpt/Sigpt";
+import CartPole from "./components/CartPole/CartPole";
 
 const Projects = () => {
   return (
@@ -29,6 +30,7 @@ const Projects = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.3 }}
       >
+        <CartPole />
         <SiGPT />
       </motion.div>
       <motion.div

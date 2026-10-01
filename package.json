@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "type": "commonjs",
   "scripts": {
+    "test": "tsx --test src/pages/Projects/components/CartPole/environment.test.ts",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -17,6 +18,7 @@
     "@types/express": "^4.17.21",
     "express": "^4.19.2",
     "framer-motion": "^11.3.28",
+    "onnxruntime-web": "^1.30.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.25.1"
@@ -31,6 +33,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
+    "tsx": "^4.23.15",
     "typescript": "^5.2.2",
     "vite": "^5.3.4"
   }

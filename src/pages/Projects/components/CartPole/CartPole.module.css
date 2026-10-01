@@ -1,0 +1,49 @@
+.demo {
+  margin-top: 20px;
+}
+
+.canvasContainer {
+  border: 2px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 1px 1px 1px black;
+  background: white;
+}
+
+.demo canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px;
+}
+
+.controls button {
+  cursor: pointer;
+  padding: 8px 14px;
+  border: 1px solid #94a3b8;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+}
+
+.controls button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.message, .error {
+  padding: 0 16px 16px;
+  font-size: 0.85rem;
+}
+
+.error {
+  color: #b91c1c;
+  overflow-wrap: anywhere;
+}
