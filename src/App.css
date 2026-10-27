@@ -1,65 +1,52 @@
-*, *::before, *::after {
-  box-sizing: border-box;
+*, *::after, *::before {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", sans-serif, monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
-* {
-  margin: 0;
-  font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
+
 html {
-  scroll-behavior: smooth;
-  padding: 0 clamp(20px, 10vw, 160px) 100px;
+    scroll-behavior: smooth;
+    margin-top: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 100px;
 }
+
 body {
-  max-width: 1600px;
-  margin: 0 auto;
-  line-height: 1.65;
-  overflow-wrap: break-word;
+    max-width: 2000px;
+    margin: auto;
 }
-h1, h2, h3, h4 {
-  line-height: 1.25;
-  letter-spacing: -0.035em;
-  text-wrap: balance;
+
+h1 {
+    font-size: 2em;
 }
-h1 { font-size: clamp(1.55rem, 3vw, 2.1rem); }
-h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
-h4 { font-size: 1.2rem; }
-p { line-height: 1.75; }
-a, a:visited {
-  color: blue;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.23em;
-  transition: color 180ms ease, text-decoration-thickness 180ms ease, text-underline-offset 180ms ease;
+
+h3 {
+    font-size: 1.5rem
 }
+
+h4 {
+    font-size: 1.2rem
+}
+
+a {
+    color: blue;
+    display: inline-block;
+    transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transform-origin: 50%, 50%;
+}
+
+a:visited {
+    color: blue;
+}
+
 a:hover, a:visited:hover {
-  color: red;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.3em;
-}
-a:focus-visible {
-  outline: 2px solid currentColor;
-  outline-offset: 4px;
-  border-radius: 2px;
-}
-::selection {
-  color: white;
-  background: blue;
-}
-::-moz-selection {
-  color: white;
-  background: blue;
-}
-@media (max-width: 650px) {
-  html { padding: 0 20px 64px; }
-  body { line-height: 1.6; }
-  h1 { font-size: clamp(1.4rem, 6vw, 1.8rem); }
-}
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    color: red;
 }
