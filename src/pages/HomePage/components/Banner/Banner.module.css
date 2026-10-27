@@ -2,96 +2,56 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    height: 100dvh;
+    min-height: 100svh;
+    gap: clamp(24px, 4vw, 56px);
 }
-
-@media (orientation: landscape) {
-    .container {
-        height: 100lvh
-    }
-}
-@media (orientation: portrait) {
-    .container {
-        height: 100svh;
-    }
-}
-
-.name {
-    display: inline-block;
-}
-
+.name { display: inline-block; max-width: 100%; }
 .intro, .abstract {
-    flex: 1 1 50%;
-    min-width: 320px;
+    flex: 1 1 320px;
+    min-width: 0;
 }
-
 .abstract {
-    font-size: 1.2rem;
-    line-height: 1.5;
+    font-size: clamp(1rem, 1.3vw, 1.2rem);
+    line-height: 1.65;
 }
-
-.abstract a {
-    word-break: break-word;
-}
-
-
+.abstract a { overflow-wrap: anywhere; }
 .appear {
     opacity: 0;
-    animation: 1s fade-in ease-in 0.4s;
-    animation-fill-mode: forwards;
+    animation: 1s fade-in ease-in 0.4s forwards;
 }
-
 .typewriter {
     border-right: 3px solid;
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
-    animation:
-        typing 1s steps(16),
-        cursor 0.8s ease-in-out infinite alternate;
+    animation: typing 1s steps(16), cursor 0.8s ease-in-out infinite alternate;
     animation-fill-mode: forwards;
 }
-
-
-.intro h2 {
-    padding-bottom: 50px;
-}
-
-@keyframes cursor {
-    50% { border-color: transparent;}
-}
-
-@keyframes typing {
-    from { width: 0; }
-}
-
-@keyframes fade-in {
-    100% { opacity: 1; }
-}
-
+.intro h2 { padding-bottom: 50px; }
+@keyframes cursor { 50% { border-color: transparent; } }
+@keyframes typing { from { width: 0; } }
+@keyframes fade-in { to { opacity: 1; } }
 .wave {
     display: inline-block;
-    animation-name: wave-animation;
-    animation-duration: 2.5s;
-    animation-delay: 1s;
-    animation-iteration-count: infinite;
+    animation: wave-animation 2.5s 1s infinite;
     transform-origin: 70% 70%;
     font-size: 1.2em;
 }
-
 @keyframes wave-animation {
-    0% { transform: rotate( 0.0deg) }
-    10% { transform: rotate(14.0deg) }
-    20% { transform: rotate(-8.0deg) }
-    30% { transform: rotate(14.0deg) }
-    40% { transform: rotate(-4.0deg) }
-    50% { transform: rotate(10.0deg) }
-    60% { transform: rotate( 0.0deg) }
-    100% { transform: rotate( 0.0deg) }
+    0%, 60%, 100% { transform: rotate(0); }
+    10%, 30% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
 }
-
 @media (max-width: 650px) {
-    .abstract {
-        font-size: 1rem;
+    .container {
+        min-height: auto;
+        padding: 64px 0 44px;
+        gap: 32px;
     }
+    .intro, .abstract { flex-basis: 100%; }
+    .intro h2 { padding-bottom: 22px; }
+    .abstract { font-size: 1rem; }
+    .typewriter { white-space: normal; border-right: 0; width: auto; animation: none; }
 }
