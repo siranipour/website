@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
+import ReadingProgress from "./components/ReadingProgress";
 
 import HomePage from "./pages/HomePage/HomePage";
 import Projects from "./pages/Projects/Projects";
@@ -12,12 +13,11 @@ const router = createBrowserRouter([
   { path: "/projects", element: <Projects />, errorElement: <NotFound /> },
 ]);
 
-const App = () => {
-  return (
-    <Theme>
-      <RouterProvider router={router} />
-    </Theme>
-  );
-};
+const App = () => (
+  <Theme>
+    <ReadingProgress />
+    <RouterProvider router={router} />
+  </Theme>
+);
 
 export default App;
