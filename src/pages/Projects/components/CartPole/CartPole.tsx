@@ -8,8 +8,10 @@ type Status = "idle" | "loading" | "ready" | "error";
 function draw(canvas: HTMLCanvasElement, state: State, action: number | null) {
   const context = canvas.getContext("2d");
   if (!context) return;
-  const width = canvas.width;
-  const height = canvas.height;
+  // Draw in fixed logical coordinates while using a HiDPI backing store.
+  const width = 900;
+  const height = 400;
+  context.setTransform(canvas.width / width, 0, 0, canvas.height / height, 0, 0);
   const scale = width / 6;
   const x = width / 2 + state[0] * scale;
   const y = height * 0.7;
@@ -77,6 +79,33 @@ export default function CartPole() {
     setOutcome("");
     if (canvas.current) draw(canvas.current, state.current, null);
   }
+
+  useEffect(() => {
+    const element = canvas.current;
+    if (!element) return;
+
+    const resize = () => {
+      const rect = element.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      const width = Math.round(rect.width * dpr);
+      const height = Math.round(rect.height * dpr);
+      if (width === 0 || height === 0) return;
+      if (element.width !== width || element.height !== height) {
+        element.width = width;
+        element.height = height;
+      }
+      draw(element, state.current, null);
+    };
+
+    const observer = new ResizeObserver(resize);
+    observer.observe(element);
+    window.addEventListener("resize", resize);
+    resize();
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
 
   useEffect(() => {
     if (canvas.current) draw(canvas.current, state.current, null);
